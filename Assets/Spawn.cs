@@ -29,10 +29,10 @@ public class Spawn : MonoBehaviour
 
         Vector3 screenEdge = spawnLeft ? Vector3.zero : new Vector3(Screen.width, 0, 0);
         Vector3 worldEdge = mainCamera.ScreenToWorldPoint(new Vector3(screenEdge.x, Screen.height / 2f, 0));
-        worldEdge.y = y;
+        worldEdge.y = -8.35f;
 
         float z = Mathf.Lerp(-7f, -2f, Mathf.InverseLerp(-8f, -6f, y));
-        worldEdge.z = z;
+        worldEdge.z = -2;
         worldEdge.x = spawnLeft ? -25f : 25f; // Set the x position based on spawn direction
         int rotateY = spawnLeft ? 0 : 180;
         int randomIndex = Random.Range(0, objectToSpawn.Length);

@@ -29,7 +29,7 @@ public class MovingObject : MonoBehaviour
 
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
         
-            Destroy(gameObject,30);
+            Destroy(gameObject,60);
         
     }
 }

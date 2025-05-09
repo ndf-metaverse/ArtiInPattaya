@@ -17,7 +17,6 @@ public class CameraManager : MonoBehaviour
     public GameObject previreImage;
     public QRDecodeTest qrDecodeTest;
 
-    public Material baseMaterial;
     public AVProLiveCameraDevice avproDevice;
     public void StartQRScan()
     {

@@ -16,6 +16,9 @@ public class CameraManager : MonoBehaviour
 
     public GameObject previreImage;
     public QRDecodeTest qrDecodeTest;
+
+    public Material baseMaterial;
+    public AVProLiveCameraDevice avproDevice;
     public void StartQRScan()
     {
         StopAVPro();
@@ -55,6 +58,8 @@ public class CameraManager : MonoBehaviour
         if (previewImage != null && avProLiveCamera.Device != null)
         {
             previewImage.texture = avProLiveCamera.Device.OutputTexture;
+            Spawn.instance.SpawnObject();
+
             qrDecodeTest.ScanCooldown();
 
         }

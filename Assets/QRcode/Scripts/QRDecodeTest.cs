@@ -37,7 +37,6 @@ public class QRDecodeTest : MonoBehaviour
 
         canScan = false;
         Debug.Log(dataText);
-        spawn.SpawnObject();
 
         if (isOpenBrowserIfUrl && Utility.CheckIsUrlFormat(dataText))
         {

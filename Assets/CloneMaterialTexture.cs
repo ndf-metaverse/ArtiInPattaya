@@ -6,7 +6,7 @@ public class CloneMaterialTexture : MonoBehaviour
 {
     public Renderer mainRenderer;
     public Material originalMaterial;
-    public bool isRenderTexture;
+    public string textureName = "_BaseMap";
 
     private void Start()
     {
@@ -16,25 +16,29 @@ public class CloneMaterialTexture : MonoBehaviour
         // Create new instance of material
         mainRenderer.material = new Material(originalMaterial);
 
+        Texture texture = originalMaterial.GetTexture(textureName);
         Texture2D originalTex = null;
-        if (isRenderTexture)
+        if (texture is RenderTexture renderTex)
         {
-            RenderTexture renderTex = originalMaterial.mainTexture as RenderTexture;
-            if (renderTex != null)
-            {
-                RenderTexture currentActiveRT = RenderTexture.active;
-                RenderTexture.active = renderTex;
+            RenderTexture currentActiveRT = RenderTexture.active;
+            RenderTexture.active = renderTex;
 
-                // Create a new Texture2D with the same size
-                originalTex = new Texture2D(renderTex.width, renderTex.height, TextureFormat.RGBA32, false);
+            // Create a new Texture2D with the same size
+            originalTex = new Texture2D(renderTex.width, renderTex.height, TextureFormat.RGBA32, false);
 
-                // Read the pixels from the active RenderTexture into the new Texture2D
-                originalTex.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
-                originalTex.Apply();
+            // Read the pixels from the active RenderTexture into the new Texture2D
+            originalTex.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
+            originalTex.Apply();
 
-                // Restore the previously active RenderTexture
-                RenderTexture.active = currentActiveRT;
-            }
+            // Restore the previously active RenderTexture
+            RenderTexture.active = currentActiveRT;
+        }
+        else if (texture is WebCamTexture webCamTex)
+        {
+            // Create a Texture2D from WebCamTexture
+            originalTex = new Texture2D(webCamTex.width, webCamTex.height, TextureFormat.RGBA32, false);
+            originalTex.SetPixels(webCamTex.GetPixels());
+            originalTex.Apply();
         }
         else
         {

@@ -17,14 +17,18 @@ public class QRDecodeTest2 : MonoBehaviour
 
     public Image torchImage;
 
-    private float scanCooldown = 2f;
+    public string textScan;
     private bool canScan = true;
 
     public bool isOpenBrowserIfUrl;
     public Spawn spawn;
     public CameraManager cameraManager;
+    public static QRDecodeTest2 instance;
+
     private void Start()
     {
+        instance = this;
+
     }
 
     private void Update()
@@ -46,7 +50,7 @@ public class QRDecodeTest2 : MonoBehaviour
             }
             Application.OpenURL(dataText);
         }
-
+        textScan = dataText;
         UiText.text = dataText;
         if (resetBtn != null) resetBtn.SetActive(true);
         if (scanLineObj != null) scanLineObj.SetActive(false);

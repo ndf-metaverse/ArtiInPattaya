@@ -50,32 +50,32 @@ public class Spawn : MonoBehaviour
         int rotateY = spawnLeft ? 0 : 180;
         int selectIndex = UnityEngine.Random.Range(0, objectToSpawn.Length);
         //Turtle
-        if (QRDecodeTest.instance.textScan == objectScanName[0])
+        if (QRDecodeTest2.instance.textScan == objectScanName[0])
         {
             selectIndex = 0;
         }
         //Peacock
-        else if (QRDecodeTest.instance.textScan == objectScanName[1])
+        else if (QRDecodeTest2.instance.textScan == objectScanName[1])
         {
             selectIndex = 1;
         }
         //Dear
-        else if (QRDecodeTest.instance.textScan == objectScanName[2])
+        else if (QRDecodeTest2.instance.textScan == objectScanName[2])
         {
             selectIndex = 2;
         }
         //Giraffe
-        else if (QRDecodeTest.instance.textScan == objectScanName[3])
+        else if (QRDecodeTest2.instance.textScan == objectScanName[3])
         {
             selectIndex = 3;
         }
         //Lion
-        else if (QRDecodeTest.instance.textScan == objectScanName[4])
+        else if (QRDecodeTest2.instance.textScan == objectScanName[4])
         {
             selectIndex = 4;
         }
         //Elephant
-        else if (QRDecodeTest.instance.textScan == objectScanName[5])
+        else if (QRDecodeTest2.instance.textScan == objectScanName[5])
         {
             selectIndex = 5;
         }

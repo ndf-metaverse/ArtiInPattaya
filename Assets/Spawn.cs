@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public float objectSpeed = 5f;
     public Camera mainCamera;
     public static Spawn instance;
-
+    public GameObject spawnParticle;
     public void Start()
     {
         instance = this; 
@@ -23,28 +23,38 @@ public class Spawn : MonoBehaviour
     }
     public void SpawnObject()
     {
-        float y = Random.Range(-7, -5); 
-
+        StartCoroutine(SpawnObjectRoutine());
+    }
+    private IEnumerator SpawnObjectRoutine()
+    {
+        float y = Random.Range(-7, -5);
         bool spawnLeft = Random.value < 0.5f;
 
         Vector3 screenEdge = spawnLeft ? Vector3.zero : new Vector3(Screen.width, 0, 0);
         Vector3 worldEdge = mainCamera.ScreenToWorldPoint(new Vector3(screenEdge.x, Screen.height / 2f, 0));
         worldEdge.y = -8.35f;
-
-        float z = Mathf.Lerp(-7f, -2f, Mathf.InverseLerp(-8f, -6f, y));
         worldEdge.z = -2;
-        worldEdge.x = spawnLeft ? -5f : 5f; // Set the x position based on spawn direction
+        worldEdge.x = spawnLeft ? -5f : 5f;
+
+        Quaternion particleRotation = Quaternion.identity;
+        GameObject particle = Instantiate(spawnParticle, worldEdge, particleRotation);
+        particle.transform.localScale = new Vector3(2f, 2f, 2f);
+        Destroy(particle, 8f); // ลบ particle ทิ้งหลัง 2 วินาที
+
+        yield return new WaitForSeconds(2f); // รอ 2 วินาที
+
         int rotateY = spawnLeft ? 0 : 180;
         int randomIndex = Random.Range(0, objectToSpawn.Length);
         GameObject selectedPrefab = objectToSpawn[randomIndex];
-
         GameObject obj = Instantiate(selectedPrefab, worldEdge, Quaternion.Euler(0, rotateY, 0));
+
         if (spawnLeft)
         {
             Vector3 scale = obj.transform.localScale;
             scale.z *= -1;
             obj.transform.localScale = scale;
         }
+
         obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera);
     }
 }

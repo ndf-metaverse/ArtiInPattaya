@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: fc40dd0b11200dd4ba79a0488ba86519
+guid: 791cc67643f905442afdd8c2bf3fd4e6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: peacock_mat
-    second: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -78,8 +73,8 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
-  - a7ff01c3a4da6ee4bbddb5b62b2efddb
-  - ad17958e811f8304fb5cabb307d686a1
+  - 29ec9e4efa986004b86a44464cfa18c2
+  - 90516435c88f8894aa4f2a73b8a117c3
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

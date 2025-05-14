@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: fc40dd0b11200dd4ba79a0488ba86519
+guid: 7be042a61c065c14d9ec4685ed74ee37
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: peacock_mat
-    second: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -4,38 +4,32 @@ using UnityEngine;
 
 public class CloneMaterialTexture : MonoBehaviour
 {
-    public Renderer mainRenderer;
+    public Renderer[] mainRenderers;
     public Material originalMaterial;
     public string textureName = "_BaseMap";
 
     private void Start()
     {
-        if (mainRenderer == null || originalMaterial == null)
+        if (mainRenderers == null || originalMaterial == null)
             return;
 
-        // Create new instance of material
-        mainRenderer.material = new Material(originalMaterial);
-
+        // เตรียม texture ที่จะใช้ซ้ำ
         Texture texture = originalMaterial.GetTexture(textureName);
         Texture2D originalTex = null;
+
         if (texture is RenderTexture renderTex)
         {
             RenderTexture currentActiveRT = RenderTexture.active;
             RenderTexture.active = renderTex;
 
-            // Create a new Texture2D with the same size
             originalTex = new Texture2D(renderTex.width, renderTex.height, TextureFormat.RGBA32, false);
-
-            // Read the pixels from the active RenderTexture into the new Texture2D
             originalTex.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
             originalTex.Apply();
 
-            // Restore the previously active RenderTexture
             RenderTexture.active = currentActiveRT;
         }
         else if (texture is WebCamTexture webCamTex)
         {
-            // Create a Texture2D from WebCamTexture
             originalTex = new Texture2D(webCamTex.width, webCamTex.height, TextureFormat.RGBA32, false);
             originalTex.SetPixels(webCamTex.GetPixels());
             originalTex.Apply();
@@ -45,18 +39,41 @@ public class CloneMaterialTexture : MonoBehaviour
             originalTex = originalMaterial.mainTexture as Texture2D;
         }
 
+        Texture2D clonedTex = null;
         if (originalTex != null)
         {
-            Texture2D clonedTex = new Texture2D(originalTex.width, originalTex.height, originalTex.format, originalTex.mipmapCount > 1);
+            clonedTex = new Texture2D(originalTex.width, originalTex.height, originalTex.format, originalTex.mipmapCount > 1);
             Graphics.CopyTexture(originalTex, clonedTex);
+        }
 
-            mainRenderer.material.mainTexture = clonedTex;
+        // Loop ทุก renderer แล้ว assign material ใหม่พร้อม texture
+        foreach (Renderer rend in mainRenderers)
+        {
+            if (rend == null) continue;
+
+            Material[] mats = rend.materials;
+            for (int i = 0; i < mats.Length; i++)
+            {
+                mats[i] = new Material(originalMaterial);
+                if (clonedTex != null)
+                    mats[i].mainTexture = clonedTex;
+            }
+            rend.materials = mats;
         }
     }
 
     private void OnDestroy()
     {
-        // Clean up material from memory
-        Destroy(mainRenderer.material);
+        if (mainRenderers == null) return;
+
+        foreach (Renderer rend in mainRenderers)
+        {
+            if (rend == null) continue;
+            foreach (var mat in rend.materials)
+            {
+                if (mat != null)
+                    Destroy(mat);
+            }
+        }
     }
 }

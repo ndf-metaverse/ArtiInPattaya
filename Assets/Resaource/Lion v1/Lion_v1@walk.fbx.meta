@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: fc40dd0b11200dd4ba79a0488ba86519
+guid: 90516435c88f8894aa4f2a73b8a117c3
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: peacock_mat
-    second: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,9 +75,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - a7ff01c3a4da6ee4bbddb5b62b2efddb
-  - ad17958e811f8304fb5cabb307d686a1
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

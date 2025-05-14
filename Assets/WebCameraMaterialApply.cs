@@ -8,6 +8,7 @@ public class WebCameraMaterialApply : MonoBehaviour
     [SerializeField] DeviceCameraController easyWebcamController;
     [SerializeField] Material _material = null;
     [SerializeField] string _texturePropertyName = "_MainTex";
+    public bool useSquareTexture;
 
     private int _propTexture = -1;
     private Texture _lastTexture;
@@ -64,7 +65,7 @@ public class WebCameraMaterialApply : MonoBehaviour
     {
         if (easyWebcamController != null && easyWebcamController.isPlaying)
         {
-            ApplyMapping(easyWebcamController.dWebCam.preview);
+            ApplyMapping(useSquareTexture ? CropToSquare(easyWebcamController.dWebCam.preview) : easyWebcamController.dWebCam.preview);
         }
         else
         {
@@ -94,5 +95,45 @@ public class WebCameraMaterialApply : MonoBehaviour
     void OnDisable()
     {
         ApplyMapping(null);
+    }
+
+    public Texture2D CropToSquare(Texture source)
+    {
+        int size = Mathf.Min(source.width, source.height);
+        int startX = (source.width - size) / 2;
+        int startY = (source.height - size) / 2;
+
+        Color[] pixels;
+        if (source is RenderTexture renderTex)
+        {
+            RenderTexture currentActiveRT = RenderTexture.active;
+            RenderTexture.active = renderTex;
+
+            // Create a new Texture2D with the same size
+            Texture2D texture2D = new Texture2D(size, size, TextureFormat.RGBA32, false);
+
+            // Read the pixels from the active RenderTexture into the new Texture2D
+            texture2D.ReadPixels(new Rect(startX, startY, size, size), 0, 0);
+            texture2D.Apply();
+
+            // Restore the previously active RenderTexture
+            RenderTexture.active = currentActiveRT;
+
+            pixels = texture2D.GetPixels(startX, startY, size, size);
+        }
+        else if (source is WebCamTexture webCamTex)
+        {
+            pixels = webCamTex.GetPixels(startX, startY, size, size);
+        }
+        else
+        {
+            Texture2D texture2D = source as Texture2D;
+            pixels = texture2D.GetPixels(startX, startY, size, size);
+        }
+
+        Texture2D cropped = new Texture2D(size, size);
+        cropped.SetPixels(pixels);
+        cropped.Apply();
+        return cropped;
     }
 }

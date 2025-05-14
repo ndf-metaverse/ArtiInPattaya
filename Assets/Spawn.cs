@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour
 
         float z = Mathf.Lerp(-7f, -2f, Mathf.InverseLerp(-8f, -6f, y));
         worldEdge.z = -2;
-        worldEdge.x = spawnLeft ? -25f : 25f; // Set the x position based on spawn direction
+        worldEdge.x = spawnLeft ? -5f : 5f; // Set the x position based on spawn direction
         int rotateY = spawnLeft ? 0 : 180;
         int randomIndex = Random.Range(0, objectToSpawn.Length);
         GameObject selectedPrefab = objectToSpawn[randomIndex];

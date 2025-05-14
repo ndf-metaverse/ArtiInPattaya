@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5060180690541264573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5032200857177253702}
+  - component: {fileID: 2215445461171529684}
+  m_Layer: 0
+  m_Name: Flower Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5032200857177253702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060180690541264573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.871, y: -0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 794400923731477334}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2215445461171529684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060180690541264573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5005eb004fe2d2c46907ae693010755e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 309479309197689143, guid: c7ce1ebf7d4c692479f0b7cceb66eaf8, type: 3}
+  stepDistance: 0.75
+  distanceRandom: 0.25
+  rotateRange: 20
+  scaleRange: 0.25
+--- !u!1001 &9082934431350210968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.5396338
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097420227158399092, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+      propertyPath: m_Name
+      value: turtle_test03 With Flower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+--- !u!4 &794400923731477334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8433931293322543822, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+  m_PrefabInstance: {fileID: 9082934431350210968}
+  m_PrefabAsset: {fileID: 0}

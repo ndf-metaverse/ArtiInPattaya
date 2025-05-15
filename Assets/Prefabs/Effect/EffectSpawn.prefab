@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1285258306594996501, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3758450485440523176, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: looping
       value: 0
@@ -56,6 +60,22 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3758773795307416858, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758773795307416858, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758773795307416858, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758773795307416858, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3758930282459386628, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: looping
       value: 0
@@ -63,6 +83,22 @@ PrefabInstance:
     - target: {fileID: 3758930282459386628, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: lengthInSec
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759977065407590648, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759977065407590648, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759977065407590648, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759977065407590648, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3958441305570010946, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: m_Name
@@ -134,9 +170,73 @@ PrefabInstance:
       propertyPath: startDelay.scalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 22552
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[0].inSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[0].outSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 468295940799250638, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: InitialModule.startLifetime.maxCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 1149902960539394173, guid: 0e4538db400387143887335940c1f739, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911938037582297993, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911938037582297993, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911938037582297993, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911938037582297993, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911938037582297993, guid: 0e4538db400387143887335940c1f739, type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4639471428238319029, guid: 0e4538db400387143887335940c1f739, type: 3}
       propertyPath: m_RootOrder
@@ -259,6 +359,22 @@ PrefabInstance:
     - target: {fileID: 6549191536531679903, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549191536544970181, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549191536544970181, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549191536544970181, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6549191536544970181, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6549191536546886425, guid: 60987929475bd2646b964285b1ff6cf5, type: 3}
       propertyPath: startDelay.scalar

@@ -36,8 +36,8 @@ public class Spawn : MonoBehaviour
 
         int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
         Vector3 lanePosition = refLaneGameobject[randomLaneIndex].transform.position;
-
-        Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, lanePosition.y, lanePosition.z);
+        int leftZSpawn = spawnLeft ? 0 : 1;
+        Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, lanePosition.y, lanePosition.z + leftZSpawn);
 
         Quaternion particleRotation = Quaternion.identity;
         GameObject particle = Instantiate(spawnParticle, spawnPosition + new Vector3(0,1,0), particleRotation);

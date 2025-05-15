@@ -14,6 +14,7 @@ public class Spawn : MonoBehaviour
 
     public string[] objectScanName;
 
+    public GameObject[] refLaneGameobject;
     public void Start()
     {
         instance = this; 
@@ -31,17 +32,15 @@ public class Spawn : MonoBehaviour
     }
     private IEnumerator SpawnObjectRoutine()
     {
-        float y = UnityEngine.Random.Range(-7, -5);
         bool spawnLeft = UnityEngine.Random.value < 0.5f;
 
-        Vector3 screenEdge = spawnLeft ? Vector3.zero : new Vector3(Screen.width, 0, 0);
-        Vector3 worldEdge = mainCamera.ScreenToWorldPoint(new Vector3(screenEdge.x, Screen.height / 2f, 0));
-        worldEdge.y = -8.35f;
-        worldEdge.z = -2;
-        worldEdge.x = spawnLeft ? -5f : 5f;
+        int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
+        Vector3 lanePosition = refLaneGameobject[randomLaneIndex].transform.position;
+
+        Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, lanePosition.y, lanePosition.z);
 
         Quaternion particleRotation = Quaternion.identity;
-        GameObject particle = Instantiate(spawnParticle, worldEdge, particleRotation);
+        GameObject particle = Instantiate(spawnParticle, spawnPosition + new Vector3(0,1,0), particleRotation);
         particle.transform.localScale = new Vector3(2f, 2f, 2f);
         Destroy(particle, 8f);
 
@@ -49,39 +48,19 @@ public class Spawn : MonoBehaviour
 
         int rotateY = spawnLeft ? 0 : 180;
         int selectIndex = UnityEngine.Random.Range(0, objectToSpawn.Length);
-        //Turtle
-        if (QRDecodeTest2.instance.textScan == objectScanName[0])
+
+        string scanned = QRDecodeTest2.instance.textScan;
+        for (int i = 0; i < objectScanName.Length; i++)
         {
-            selectIndex = 0;
-        }
-        //Peacock
-        else if (QRDecodeTest2.instance.textScan == objectScanName[1])
-        {
-            selectIndex = 1;
-        }
-        //Dear
-        else if (QRDecodeTest2.instance.textScan == objectScanName[2])
-        {
-            selectIndex = 2;
-        }
-        //Giraffe
-        else if (QRDecodeTest2.instance.textScan == objectScanName[3])
-        {
-            selectIndex = 3;
-        }
-        //Lion
-        else if (QRDecodeTest2.instance.textScan == objectScanName[4])
-        {
-            selectIndex = 4;
-        }
-        //Elephant
-        else if (QRDecodeTest2.instance.textScan == objectScanName[5])
-        {
-            selectIndex = 5;
+            if (scanned == objectScanName[i])
+            {
+                selectIndex = i;
+                break;
+            }
         }
 
         GameObject selectedPrefab = objectToSpawn[selectIndex];
-        GameObject obj = Instantiate(selectedPrefab, worldEdge, Quaternion.Euler(0, rotateY, 0));
+        GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
 
         if (spawnLeft)
         {
@@ -92,4 +71,5 @@ public class Spawn : MonoBehaviour
 
         obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera);
     }
+
 }

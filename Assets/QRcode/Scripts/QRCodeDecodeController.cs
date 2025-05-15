@@ -29,13 +29,13 @@ public class QRCodeDecodeController : MonoBehaviour
 	private byte[] targetbyte;		//the pixels of the camera image.
 	private int W, H, WxH;			//width/height of the camera image			
 	int framerate = 0; 		
-
-	#if UNITY_IOS
+	public float time = 0f;   //the time to scan the qrcode
+#if UNITY_IOS
 	int blockWidth = 450;
-	#elif UNITY_ANDROID
+#elif UNITY_ANDROID
 	int blockWidth = 350;
-	#else
-	int blockWidth = 350;
+#else
+    int blockWidth = 350;
 	#endif
 	bool isInit = false;
 	BarcodeReader barReader;
@@ -137,8 +137,9 @@ public class QRCodeDecodeController : MonoBehaviour
 			
 			if(decoding)
 			{
-				// if the status variable is change
-				if(tempDecodeing != decoding)
+				countTime();
+                // if the status variable is change
+                if (tempDecodeing != decoding)
 				{
 					onQRScanFinished.Invoke(dataText);//triger the scan finished event;
 				}
@@ -146,7 +147,11 @@ public class QRCodeDecodeController : MonoBehaviour
 			}
 		}
 	}
- 	
+ 	public void countTime()
+	{
+		time += Time.deltaTime;
+		
+	}
 	/// <summary>
 	/// Reset this scan param
 	/// </summary>

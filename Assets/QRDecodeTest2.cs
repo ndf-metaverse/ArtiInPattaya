@@ -24,7 +24,13 @@ public class QRDecodeTest2 : MonoBehaviour
     public Spawn spawn;
     public CameraManager cameraManager;
     public static QRDecodeTest2 instance;
+    public float number;
 
+    public void TestNumber()
+    {
+        number += Time.deltaTime;
+        Debug.Log(number);
+    }
     private void Start()
     {
         instance = this;
@@ -38,7 +44,7 @@ public class QRDecodeTest2 : MonoBehaviour
     public void qrScanFinished(string dataText)
     {
         if (!canScan) return;
-
+        TestNumber();
         canScan = false;
         Debug.Log(dataText);
 
@@ -58,7 +64,11 @@ public class QRDecodeTest2 : MonoBehaviour
     }
     public IEnumerator cooldownscan()
     {
-        Spawn.instance.SpawnObject();
+        if(e_qrController.time > 0.02f)
+        {
+            Spawn.instance.SpawnObject();
+            e_qrController.time = 0;
+        }
 
         yield return new WaitForSeconds(2);
         // cameraManager.StartAVProAfterQRScan();

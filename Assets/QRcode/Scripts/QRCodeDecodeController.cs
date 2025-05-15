@@ -30,6 +30,8 @@ public class QRCodeDecodeController : MonoBehaviour
 	private int W, H, WxH;			//width/height of the camera image			
 	int framerate = 0; 		
 	public float time = 0f;   //the time to scan the qrcode
+	public bool AutoRotate = true;
+    public bool TryInverted = true;
 #if UNITY_IOS
 	int blockWidth = 450;
 #elif UNITY_ANDROID
@@ -45,8 +47,8 @@ public class QRCodeDecodeController : MonoBehaviour
     void Start()
 	{
 		barReader = new BarcodeReader ();
-		barReader.AutoRotate = true;
-		barReader.TryInverted = true;
+		barReader.AutoRotate = AutoRotate;
+		barReader.TryInverted = TryInverted;
 		
 		if (!e_DeviceController) {
 			e_DeviceController = GameObject.FindObjectOfType<DeviceCameraController>();

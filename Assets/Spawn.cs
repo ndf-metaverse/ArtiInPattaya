@@ -5,19 +5,37 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject[] objectToSpawn;
+    //Auto spawn
     public float spawnInterval = 2f;
+    public int limitspawn = 10;
+
+    //spawn system
+    public GameObject[] objectToSpawn;
     public float objectSpeed = 5f;
     public Camera mainCamera;
     public static Spawn instance;
     public GameObject spawnParticle;
 
-    public string[] objectScanName;
-
     public GameObject[] refLaneGameobject;
+
+    public List<ObjectToSpawnList> objectScanPrefab;
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     public void Start()
     {
         instance = this; 
+    }
+    private IEnumerator SpawnRoutine()
+    {
+        while (true)
+        {
+            // ถ้าจำนวนวัตถุที่ spawn ยังไม่เกิน 5 ตัว ให้ spawn เพิ่ม
+            spawnedObjects.RemoveAll(obj => obj == null); // ลบวัตถุที่ถูกทำลายออกจาก list
+            if (spawnedObjects.Count < 5)
+            {
+                SpawnObject();
+            }
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
     public void Update()
     {
@@ -49,16 +67,17 @@ public class Spawn : MonoBehaviour
         int rotateY = spawnLeft ? 0 : 180;
         int selectIndex = UnityEngine.Random.Range(0, objectToSpawn.Length);
 
+        //For scanning
         string scanned = QRDecodeTest2.instance.textScan;
-        for (int i = 0; i < objectScanName.Length; i++)
+        foreach (var animal in objectScanPrefab)
         {
-            if (scanned == objectScanName[i])
+            if (animal.nameToscan == scanned)
             {
-                selectIndex = i;
+                selectIndex = Array.IndexOf(objectScanPrefab.ToArray(), animal);
                 break;
             }
         }
-
+        objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
 
@@ -72,4 +91,12 @@ public class Spawn : MonoBehaviour
         obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera);
     }
 
+}
+[System.Serializable]
+
+public class ObjectToSpawnList
+{
+    public GameObject prefab;
+    public string nameToscan;
+    public float speed;
 }

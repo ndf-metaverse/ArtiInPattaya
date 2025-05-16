@@ -1020,17 +1020,29 @@ MonoBehaviour:
   objectSpeed: 1
   mainCamera: {fileID: 21}
   spawnParticle: {fileID: 120726557}
-  objectScanName:
-  - Turtle_0_0
-  - Peacock_0_0
-  - Dear_0_0
-  - Giraffe_0_0
-  - Lion_0_0
-  - Elephant_0_0
   refLaneGameobject:
   - {fileID: 821973747}
   - {fileID: 478013851}
   - {fileID: 2072725453}
+  objectScanPrefab:
+  - prefab: {fileID: 9097420227158399092, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
+    nameToscan: Turtle_0_0
+    speed: 0.5
+  - prefab: {fileID: 163927148162441364, guid: 5b41d4a20e2505545ac0c48022bd0d6b, type: 3}
+    nameToscan: Peacock_0_0
+    speed: 1
+  - prefab: {fileID: 4717320256259325754, guid: 86e07cc350e12d74cb794dfebfca5e63, type: 3}
+    nameToscan: Dear_0_0
+    speed: 1.1
+  - prefab: {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
+    nameToscan: Giraffe_0_0
+    speed: 0.8
+  - prefab: {fileID: 5029560389163900741, guid: abdef6e5f5d491246854d6a64f240246, type: 3}
+    nameToscan: Lion_0_0
+    speed: 1.2
+  - prefab: {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
+    nameToscan: Elephant_0_0
+    speed: 0.6
 --- !u!114 &330355587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   e_DeviceController: {fileID: 973949649}
   time: 0
+  AutoRotate: 1
+  TryInverted: 1
   onQRScanFinished:
     m_PersistentCalls:
       m_Calls:
@@ -2848,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2137463768940612340, guid: 5a9fde317ef5c224faab658d1e77295f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: 11.84
       objectReference: {fileID: 0}
     - target: {fileID: 2137463768940612340, guid: 5a9fde317ef5c224faab658d1e77295f, type: 3}
       propertyPath: m_LocalPosition.z

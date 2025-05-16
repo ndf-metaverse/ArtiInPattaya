@@ -1,16 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
+    public Action<MovingObject> OnDestroyed;
+
+
     private bool fromLeft;
     public float speed;
     private Camera cam;
 
     private float screenBuffer = 100f;
-    private int bounceCount = 0;
-    private const int maxBounce = 3;
+    public int bounceCount = 0;
+    public const int maxBounce = 3;
     private bool hasReturned = false;
 
     public void Initialize(bool fromLeft, float speed, Camera cam)
@@ -47,8 +51,9 @@ public class MovingObject : MonoBehaviour
                 transform.Rotate(0f, 180f, 0f);
             }
             bounceCount++;
-            if (bounceCount >= maxBounce)
+            if (bounceCount >= maxBounce -1)
             {
+                OnDestroyed?.Invoke(this);
                 Destroy(gameObject);
             }
         }

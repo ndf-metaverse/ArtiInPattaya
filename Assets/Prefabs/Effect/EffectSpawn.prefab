@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1285258306594996500, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: lengthInSec
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1285258306594996501, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: m_SortingOrder
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758450485440523176, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: lengthInSec
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3758773795307416858, guid: fe68b2794364fcf42a86cfbd4f9cc7ea, type: 3}
       propertyPath: m_UseCustomVertexStreams

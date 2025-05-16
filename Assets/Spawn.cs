@@ -6,7 +6,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     //Auto spawn
-    public float spawnInterval = 2f;
+    public float spawnInterval = 4f;
     public int limitspawn = 10;
 
     //spawn system
@@ -19,20 +19,24 @@ public class Spawn : MonoBehaviour
     public GameObject[] refLaneGameobject;
 
     public List<ObjectToSpawnList> objectScanPrefab;
-    private List<GameObject> spawnedObjects = new List<GameObject>();
+    public List<GameObject> spawnedObjects = new List<GameObject>();
+
+    public AudioSource portalSound;
+    public bool notUseMaterial = false;
     public void Start()
     {
-        instance = this; 
+        instance = this;
+        StartCoroutine(SpawnRoutine());
+
     }
     private IEnumerator SpawnRoutine()
     {
         while (true)
         {
-            // ถ้าจำนวนวัตถุที่ spawn ยังไม่เกิน 5 ตัว ให้ spawn เพิ่ม
-            spawnedObjects.RemoveAll(obj => obj == null); // ลบวัตถุที่ถูกทำลายออกจาก list
+            spawnedObjects.RemoveAll(obj => obj == null);
             if (spawnedObjects.Count < 5)
             {
-                SpawnObject();
+                SpawnObject(false);
             }
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -41,14 +45,14 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnObject();
+            SpawnObject(true);
         }
     }
-    public void SpawnObject()
+    public void SpawnObject(bool playerSpawn)
     {
-        StartCoroutine(SpawnObjectRoutine());
+        StartCoroutine(SpawnObjectRoutine(playerSpawn));
     }
-    private IEnumerator SpawnObjectRoutine()
+    private IEnumerator SpawnObjectRoutine(bool playerSpawn)
     {
         bool spawnLeft = UnityEngine.Random.value < 0.5f;
 
@@ -58,7 +62,8 @@ public class Spawn : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, lanePosition.y, lanePosition.z + leftZSpawn);
 
         Quaternion particleRotation = Quaternion.identity;
-        GameObject particle = Instantiate(spawnParticle, spawnPosition + new Vector3(0,1,0), particleRotation);
+        GameObject particle = Instantiate(spawnParticle, spawnPosition + new Vector3(0, 1, 0), particleRotation);
+        portalSound.Play();
         particle.transform.localScale = new Vector3(2f, 2f, 2f);
         Destroy(particle, 8f);
 
@@ -81,6 +86,19 @@ public class Spawn : MonoBehaviour
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
 
+        if (playerSpawn)
+        {
+
+        }
+        else
+        {
+            if (notUseMaterial == false)
+            {
+                int randomMat = UnityEngine.Random.Range(0, objectScanPrefab[selectIndex].materialOverride.Length);
+                obj.GetComponent<CloneMaterialTexture>().originalMaterial = objectScanPrefab[selectIndex].materialOverride[randomMat];
+            }
+        }
+
         if (spawnLeft)
         {
             Vector3 scale = obj.transform.localScale;
@@ -89,6 +107,9 @@ public class Spawn : MonoBehaviour
         }
 
         obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera);
+
+        spawnedObjects.Add(obj);
+
     }
 
 }
@@ -99,4 +120,5 @@ public class ObjectToSpawnList
     public GameObject prefab;
     public string nameToscan;
     public float speed;
+    public Material[] materialOverride;
 }

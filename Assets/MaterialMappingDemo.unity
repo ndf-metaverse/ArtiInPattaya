@@ -1139,7 +1139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 5
-  limitspawn: 10
+  limitspawn: 30
+  limitautospawn: 10
   objectToSpawn:
   - {fileID: 520636630157522663, guid: 07f638e9d06ba2c458ca685dcb394c0c, type: 3}
   - {fileID: 163927148162441364, guid: 5b41d4a20e2505545ac0c48022bd0d6b, type: 3}
@@ -2811,7 +2812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.600098, y: -42}
+  m_AnchoredPosition: {x: -11.600098, y: 17}
   m_SizeDelta: {x: -156, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1771499307

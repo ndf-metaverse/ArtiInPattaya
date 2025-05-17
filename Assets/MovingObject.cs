@@ -16,12 +16,15 @@ public class MovingObject : MonoBehaviour
     public int bounceCount = 0;
     public const int maxBounce = 3;
     private bool hasReturned = false;
+    public GameObject[] refLaneGameobject;
 
-    public void Initialize(bool fromLeft, float speed, Camera cam)
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
         this.cam = cam;
+        this.refLaneGameobject = refLaneGameobject;
+
     }
 
     void Update()
@@ -39,6 +42,18 @@ public class MovingObject : MonoBehaviour
             fromLeft = !fromLeft;
 
             Vector3 pos = transform.position;
+
+            if (refLaneGameobject != null && refLaneGameobject.Length > 0)
+            {
+                int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
+                float newY = refLaneGameobject[randomLaneIndex].transform.position.y;
+                pos.y = newY;
+                float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;
+                pos.z = newZ;
+                transform.localScale = new Vector3(refLaneGameobject[randomLaneIndex].transform.localScale.x, refLaneGameobject[randomLaneIndex].transform.localScale.y, transform.localScale.z);
+
+            }
+
             pos.z += fromLeft ? 1f : -1f;
             transform.position = pos;
 

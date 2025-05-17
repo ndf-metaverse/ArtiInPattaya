@@ -7,7 +7,8 @@ public class Spawn : MonoBehaviour
 {
     //Auto spawn
     public float spawnInterval = 4f;
-    public int limitspawn = 10;
+    public int limitspawn = 30;
+    public int limitautospawn = 10;
 
     //spawn system
     public GameObject[] objectToSpawn;
@@ -34,7 +35,7 @@ public class Spawn : MonoBehaviour
         while (true)
         {
             spawnedObjects.RemoveAll(obj => obj == null);
-            if (spawnedObjects.Count < 5)
+            if (spawnedObjects.Count < limitautospawn)
             {
                 SpawnObject(false);
             }
@@ -61,7 +62,20 @@ public class Spawn : MonoBehaviour
         int leftZSpawn = spawnLeft ? 0 : 1;
         Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, lanePosition.y, lanePosition.z + leftZSpawn);
 
+        if (spawnedObjects.Count >= limitspawn)
+        {
+            if (spawnedObjects[0] != null)
+            {
+                var movingObj = spawnedObjects[0].GetComponent<MovingObject>();
+                if (movingObj != null)
+                {
+                    movingObj.bounceCount = MovingObject.maxBounce;
+                }
+            }
+        }
+
         Quaternion particleRotation = Quaternion.identity;
+        
         GameObject particle = Instantiate(spawnParticle, spawnPosition + new Vector3(0, 1, 0), particleRotation);
         portalSound.Play();
         particle.transform.localScale = new Vector3(2f, 2f, 2f);
@@ -82,9 +96,11 @@ public class Spawn : MonoBehaviour
                 break;
             }
         }
+        //Spawn Animal
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
+        obj.transform.localScale = new Vector3(refLaneGameobject[randomLaneIndex].transform.localScale.x, refLaneGameobject[randomLaneIndex].transform.localScale.y, selectedPrefab.transform.localScale.z);
 
         if (playerSpawn)
         {
@@ -106,7 +122,8 @@ public class Spawn : MonoBehaviour
             obj.transform.localScale = scale;
         }
 
-        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera);
+        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject);
+
 
         spawnedObjects.Add(obj);
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     //Auto spawn
-    public float spawnInterval = 4f;
+    public float spawnInterval = 8f;
     public int limitspawn = 30;
     public int limitautospawn = 10;
 
@@ -145,7 +145,7 @@ public class Spawn : MonoBehaviour
     }
     private IEnumerator ResetPlayerSpawnedFlag()
     {
-        yield return new WaitForSeconds(5f); // delay ก่อนให้ spawn auto กลับมาเร็วปกติ
+        yield return new WaitForSeconds(5f);
         playerSpawnedRecently = false;
     }
 

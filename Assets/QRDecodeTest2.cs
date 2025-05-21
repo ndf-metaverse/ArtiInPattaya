@@ -64,7 +64,7 @@ public class QRDecodeTest2 : MonoBehaviour
     }
     public IEnumerator cooldownscan()
     {
-        if(e_qrController.time > 0.02f)
+        if(e_qrController.time > 0.04f)
         {
             Spawn.instance.SpawnObject(true);
             e_qrController.time = 0;

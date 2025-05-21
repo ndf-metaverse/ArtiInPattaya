@@ -8,7 +8,7 @@ public class CameraMove : MonoBehaviour
 
     //void Start()
     //{
-    //    float targetWidth = 6450f;
+    //    float targetWidth = 7600f;
     //    float targetHeight = 1440f;
 
     //    float targetAspect = targetWidth / targetHeight;

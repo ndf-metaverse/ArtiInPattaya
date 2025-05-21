@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
@@ -42,14 +41,15 @@ public class Spawn : MonoBehaviour
             {
                 SpawnObject(false);
             }
-            if (playerSpawnedRecently)
-            {
-                yield return new WaitForSeconds(spawnInterval * 2); // delay มากขึ้น
-            }
-            else
-            {
-                yield return new WaitForSeconds(spawnInterval);
-            }
+            //if (playerSpawnedRecently)
+            //{
+            //    yield return new WaitForSeconds(spawnInterval * 2);
+            //}
+            //else
+            //{
+            //    yield return new WaitForSeconds(spawnInterval);
+            //}
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
     public void Update()

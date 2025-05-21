@@ -59,7 +59,14 @@ public class MovingObject : MonoBehaviour
 
             if (refLaneGameobject != null && refLaneGameobject.Length > 0)
             {
-                int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
+                bounceCount++;
+                if (bounceCount >= maxBounce)
+                {
+                    OnDestroyed?.Invoke(this);
+                    Destroy(gameObject);
+                }
+
+                int randomLaneIndex = bounceCount;
                 float newY = refLaneGameobject[randomLaneIndex].transform.position.y;
                 pos.y = newY;
                 float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;
@@ -79,12 +86,7 @@ public class MovingObject : MonoBehaviour
             {
                 transform.Rotate(0f, 180f, 0f);
             }
-            bounceCount++;
-            if (bounceCount >= maxBounce -1)
-            {
-                OnDestroyed?.Invoke(this);
-                Destroy(gameObject);
-            }
+           
         }
 
         if (hasReturned && screenPos.x >= 0 && screenPos.x <= Screen.width)

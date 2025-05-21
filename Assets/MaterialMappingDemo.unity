@@ -1240,17 +1240,15 @@ MonoBehaviour:
   objectToSpawn:
   - {fileID: 520636630157522663, guid: 07f638e9d06ba2c458ca685dcb394c0c, type: 3}
   - {fileID: 163927148162441364, guid: 5b41d4a20e2505545ac0c48022bd0d6b, type: 3}
-  - {fileID: 1498881385871918425, guid: 4e69a6450c872ac4da8ffe4a10b79c52, type: 3}
-  - {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
+  - {fileID: 5541410104104461012, guid: 14a330f2727938e4b85642e3d11a4518, type: 3}
   - {fileID: 5029560389163900741, guid: abdef6e5f5d491246854d6a64f240246, type: 3}
-  - {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
   objectSpeed: 1
   mainCamera: {fileID: 21}
   spawnParticle: {fileID: 120726557}
   refLaneGameobject:
+  - {fileID: 2072725453}
   - {fileID: 821973747}
   - {fileID: 478013851}
-  - {fileID: 2072725453}
   objectScanPrefab:
   - prefab: {fileID: 9097420227158399092, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
     nameToscan: Turtle_0_0
@@ -1258,42 +1256,36 @@ MonoBehaviour:
     timeToStart: 4
     materialOverride:
     - {fileID: 2100000, guid: 079ade8ec468af443801ca5be716a8ca, type: 2}
-    - {fileID: 2100000, guid: 8221f972c813c334390c369950e3c388, type: 2}
   - prefab: {fileID: 163927148162441364, guid: 5b41d4a20e2505545ac0c48022bd0d6b, type: 3}
     nameToscan: Peacock_0_0
     speed: 1
     timeToStart: 4
     materialOverride:
     - {fileID: 2100000, guid: 030fb6a3aa9d07048853a4f8a966410f, type: 2}
-    - {fileID: 2100000, guid: c9e7384dd8be7044bbfeb0a39c6359f0, type: 2}
   - prefab: {fileID: 4717320256259325754, guid: 86e07cc350e12d74cb794dfebfca5e63, type: 3}
     nameToscan: Dear_0_0
     speed: 1.1
     timeToStart: 2.2
     materialOverride:
     - {fileID: 2100000, guid: 6ed3d215338fc31468ae515b79e8a33b, type: 2}
-    - {fileID: 2100000, guid: 99d412b586c3d8b489eba6cb516d302f, type: 2}
-  - prefab: {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
-    nameToscan: Giraffe_0_0
-    speed: 0.8
-    timeToStart: 2.7
-    materialOverride:
-    - {fileID: 2100000, guid: c9574d644b25f154c9798d2a2a6efbc8, type: 2}
-    - {fileID: 2100000, guid: da511eb99fd48404abba70db0412e374, type: 2}
   - prefab: {fileID: 5029560389163900741, guid: abdef6e5f5d491246854d6a64f240246, type: 3}
     nameToscan: Lion_0_0
     speed: 1.2
     timeToStart: 3.6
     materialOverride:
     - {fileID: 2100000, guid: c48fb59857a5098488a658cb86725784, type: 2}
-    - {fileID: 2100000, guid: f73e97d17744dfd41a62cabbed21a463, type: 2}
+  - prefab: {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
+    nameToscan: Giraffe_0_0
+    speed: 0.8
+    timeToStart: 2.7
+    materialOverride:
+    - {fileID: 2100000, guid: c9574d644b25f154c9798d2a2a6efbc8, type: 2}
   - prefab: {fileID: 7976603318613216943, guid: 4c9fa6160e1e99645852bd7105fbe494, type: 3}
     nameToscan: Elephant_0_0
     speed: 0.6
     timeToStart: 2.7
     materialOverride:
     - {fileID: 2100000, guid: 3010322256645614e9cdbf1ceb2b06f0, type: 2}
-    - {fileID: 2100000, guid: fbfc7b166bab338488447bbfa2b6e81a, type: 2}
   spawnedObjects: []
   portalSound: {fileID: 111422826}
   notUseMaterial: 0

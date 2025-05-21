@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7038798933667518103}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_front_layer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7626789373735911169}
   - component: {fileID: 3157702858792997559}
   - component: {fileID: 2757347055186812543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_New
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2953235577759355429}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_b_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5825653048232374211}
   - component: {fileID: 5659109184494492403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 75f255c22e0c4b04ba7fc50e222ba33d, type: 3}
+  - {fileID: 2100000, guid: 6ba6c874366191a4ba30caa75597fea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065124138701987434}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8773567124564826380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_a_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5460765580954940515}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mid_head_feather_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083924383852864927}
   - component: {fileID: 6713086268742810827}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4362260292539486492}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4623458710388237768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1666802885751869497}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_head_feather_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8753074127446960916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6831102378713672908}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8429327450158113468}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029962947052100907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: beak_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367358956422439732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_front_layer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5511895512558860588}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_head_feather_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7474545200390956539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_back_layer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4341517269500668929}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_back_layer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6445766855542803200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_head_feather_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1376273911464702533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8076742465395461779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_c_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8269220477488930764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6154928348862375338}
   - component: {fileID: 8962472786681614541}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_BkLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4537893322151076408}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_c_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4757980360577394041}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_b_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214141441445832648}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_a_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593031557559244544}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3585579030133667099}
   - component: {fileID: 4427650652290074389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_TopWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8880742331751844188}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1307,7 +1307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3551096206365998587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mid_head_feather_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7483825801274584177}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_c_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8933594764257312953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8294721756702534948}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1435,7 +1435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8274121522376104337}
   - component: {fileID: 3147532775668543521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9033452132168970495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1556,7 +1556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2149550820932959187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_c_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6354111609922858005}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: beak_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1617,7 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774866623167376249}
   - component: {fileID: 4332085515026552291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_FrLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1715,7 +1715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7895170215857233063}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,7 +1745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5065680284264455229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_front_layer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1777,7 +1777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4736026343703701476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_b_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4487558338520561670}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1841,7 +1841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8489393084829685997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_a_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583837180012073170}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1902,7 +1902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1768313461015145689}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head_feather_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1936,7 +1936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3307545377001066537}
   - component: {fileID: 4502734776248339597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_Eyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2029,7 +2029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5514115906473670032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2061,7 +2061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2745931724100500140}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_claw_b_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,7 +2091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899418997837120952}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_head_feather_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2122,7 +2122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841519727407538532}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wing_front_layer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2152,7 +2152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2421161471083386149}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_claw_a_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2184,7 +2184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616368205689590995}
   - component: {fileID: 1914905198503778163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Peacock_BtmWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2280,7 +2280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8477815907473664509}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

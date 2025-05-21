@@ -73,10 +73,10 @@ public class Spawn : MonoBehaviour
     {
         bool spawnLeft = UnityEngine.Random.value < 0.5f;
 
-        int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
-        Vector3 lanePosition = refLaneGameobject[randomLaneIndex].transform.position;
+        //int randomLaneIndex = UnityEngine.Random.Range(0, refLaneGameobject.Length);
+        Vector3 lanePosition = refLaneGameobject[0].transform.position;
         int leftZSpawn = spawnLeft ? 0 : 1;
-        Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, 3, lanePosition.z + leftZSpawn);
+        Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, 0, lanePosition.z + leftZSpawn);
 
         if (spawnedObjects.Count >= limitspawn)
         {
@@ -116,7 +116,7 @@ public class Spawn : MonoBehaviour
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
-        obj.transform.localScale = new Vector3(refLaneGameobject[randomLaneIndex].transform.localScale.x, refLaneGameobject[randomLaneIndex].transform.localScale.y, selectedPrefab.transform.localScale.z);
+        obj.transform.localScale = new Vector3(refLaneGameobject[0].transform.localScale.x, refLaneGameobject[0].transform.localScale.y, selectedPrefab.transform.localScale.z);
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
         if (playerSpawn)
         {

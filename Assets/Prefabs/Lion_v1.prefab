@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3333159733275423959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6604945261976933342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309762520053150019}
   - component: {fileID: 5269573380228649143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4946933967079083389}
   - component: {fileID: 6587402380830575713}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_FrLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3435317630182313743}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8528161481759097183}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4860853642732742698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4355109769315778408}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4374200581672760973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7808859778502841435}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3789270168606855925}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4988236882221787919}
   - component: {fileID: 842248916267199368}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4038740818436192078}
   - component: {fileID: 6760366037309772161}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_FrLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2800356486733859152}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4868044015454443326}
   - component: {fileID: 549388000530552095}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_BkLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183718229107492933}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3034215735834747766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 255774298767221388}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5162321843084656401}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5279028669928972731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: -8201374146408474088}
   - component: {fileID: 7965635286704613379}
   - component: {fileID: 6810877348480045728}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2581162322849020207}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3124387346585803083}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1130,7 +1130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9160590126010433812}
   - component: {fileID: 9156167808880469717}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_BkLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4536214246775444677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8167942009344783965}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2030524659639113031}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952215656741527153}
   - component: {fileID: 2104523304565797702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_Eyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3706472380695125357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,7 +1432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1821151012471395101}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5914459330137261172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2394077539135034610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505340323882457704}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8440746778316714275}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3133258529766436274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7738669616104315752}
   - component: {fileID: 6877407585730908855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lion_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1709,7 +1709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 776743572467393315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4159826333879159371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

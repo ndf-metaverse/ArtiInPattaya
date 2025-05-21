@@ -24,7 +24,9 @@ public class Spawn : MonoBehaviour
 
     public AudioSource portalSound;
     public bool notUseMaterial = false;
-    private bool playerSpawnedRecently = false;
+    public bool playerSpawnedRecently = false;
+
+    public float delayspawnAuto = 0;
 
     public void Start()
     {
@@ -39,17 +41,17 @@ public class Spawn : MonoBehaviour
             spawnedObjects.RemoveAll(obj => obj == null);
             if (spawnedObjects.Count < limitautospawn)
             {
-                SpawnObject(false);
+                if(playerSpawnedRecently == true)
+                {
+                    SpawnObject(playerSpawnedRecently);
+                }
+                else
+                {
+                    SpawnObject(playerSpawnedRecently);
+                }
             }
-            //if (playerSpawnedRecently)
-            //{
-            //    yield return new WaitForSeconds(spawnInterval * 2);
-            //}
-            //else
-            //{
-            //    yield return new WaitForSeconds(spawnInterval);
-            //}
-            yield return new WaitForSeconds(spawnInterval);
+            
+            //yield return new WaitForSeconds(spawnInterval);
         }
     }
     public void Update()
@@ -145,7 +147,8 @@ public class Spawn : MonoBehaviour
     }
     private IEnumerator ResetPlayerSpawnedFlag()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(spawnInterval + spawnInterval);
+        SpawnRoutine();
         playerSpawnedRecently = false;
     }
 

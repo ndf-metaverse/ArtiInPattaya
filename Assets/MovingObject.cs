@@ -17,21 +17,35 @@ public class MovingObject : MonoBehaviour
     public const int maxBounce = 3;
     private bool hasReturned = false;
     public GameObject[] refLaneGameobject;
-
-    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject)
+    public float idleTime = 2f;
+    public float idleCount = 0f;
+    public Animator animator;
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
         this.cam = cam;
         this.refLaneGameobject = refLaneGameobject;
+        this.idleTime = idelTime;
+        animator = GetComponent<Animator>();
 
     }
 
     void Update()
     {
-        float moveAmount = speed * Time.deltaTime;
+        if (idleCount < idleTime)
+        {
+            idleCount += Time.deltaTime;
+
+        }
+        else
+        {
+            float moveAmount = speed * Time.deltaTime;
+            animator.SetBool("Walk", true);
+
+            transform.Translate(Vector3.right * moveAmount);
+        }
         
-        transform.Translate(Vector3.right * moveAmount);
 
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
 

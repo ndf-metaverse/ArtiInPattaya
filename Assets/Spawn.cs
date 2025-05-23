@@ -28,6 +28,7 @@ public class Spawn : MonoBehaviour
 
     public float delayspawnAuto = 0;
 
+    private bool autoSpawnPaused = false;
     public void Start()
     {
         instance = this;
@@ -39,19 +40,13 @@ public class Spawn : MonoBehaviour
         while (true)
         {
             spawnedObjects.RemoveAll(obj => obj == null);
-            if (spawnedObjects.Count < limitautospawn)
+
+            if (!autoSpawnPaused && spawnedObjects.Count < limitautospawn)
             {
-                if(playerSpawnedRecently == true)
-                {
-                    SpawnObject(playerSpawnedRecently);
-                }
-                else
-                {
-                    SpawnObject(playerSpawnedRecently);
-                }
+                SpawnObject(playerSpawnedRecently);
             }
-            
-            //yield return new WaitForSeconds(spawnInterval);
+
+            yield return new WaitForSeconds(spawnInterval); // ให้พักก่อนลูปใหม่
         }
     }
     public void Update()
@@ -66,11 +61,19 @@ public class Spawn : MonoBehaviour
         if (playerSpawn)
         {
             playerSpawnedRecently = true;
-            StartCoroutine(ResetPlayerSpawnedFlag());
+            autoSpawnPaused = true;
+            StartCoroutine(ResumeAutoSpawnAfterDelay(10f)); // ← หยุด auto แล้วเริ่มนับเวลา
         }
 
         StartCoroutine(SpawnObjectRoutine(playerSpawn));
     }
+    private IEnumerator ResumeAutoSpawnAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        autoSpawnPaused = false;
+        playerSpawnedRecently = false;
+    }
+
     private IEnumerator SpawnObjectRoutine(bool playerSpawn)
     {
         bool spawnLeft = UnityEngine.Random.value < 0.5f;

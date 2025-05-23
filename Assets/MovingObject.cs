@@ -8,7 +8,7 @@ public class MovingObject : MonoBehaviour
     public Action<MovingObject> OnDestroyed;
 
 
-    private bool fromLeft;
+    public bool fromLeft;
     public float speed;
     private Camera cam;
 
@@ -82,11 +82,17 @@ public class MovingObject : MonoBehaviour
             scale.z = -scale.z;
             transform.localScale = scale;
 
-            if (pos.z <= 0)
-            {
-                transform.Rotate(0f, 180f, 0f);
-            }
-           
+            
+                if (bounceCount > 2)
+                {
+                    transform.Rotate(0f, 0, 0f);
+
+                }
+                else
+                {
+                    transform.Rotate(0f, 180f, 0f);
+                }
+            
         }
 
         if (hasReturned && screenPos.x >= 0 && screenPos.x <= Screen.width)

@@ -1345,36 +1345,42 @@ MonoBehaviour:
     nameToscan: Turtle_0_0
     speed: 0.5
     timeToStart: 4
+    distance: -0.2
     materialOverride:
     - {fileID: 2100000, guid: 079ade8ec468af443801ca5be716a8ca, type: 2}
   - prefab: {fileID: 3946844854748099520, guid: d834c9ad2a2a0c14fb0ccbd5eb2804f5, type: 3}
     nameToscan: Peacock_0_0
     speed: 1
     timeToStart: 4
+    distance: -0.1
     materialOverride:
     - {fileID: 2100000, guid: 030fb6a3aa9d07048853a4f8a966410f, type: 2}
   - prefab: {fileID: 4717320256259325754, guid: 86e07cc350e12d74cb794dfebfca5e63, type: 3}
     nameToscan: Dear_0_0
     speed: 1.1
     timeToStart: 2.2
+    distance: 0
     materialOverride:
     - {fileID: 2100000, guid: 6ed3d215338fc31468ae515b79e8a33b, type: 2}
   - prefab: {fileID: 5029560389163900741, guid: abdef6e5f5d491246854d6a64f240246, type: 3}
     nameToscan: Lion_0_0
     speed: 1.2
     timeToStart: 3.6
+    distance: 0.1
     materialOverride:
     - {fileID: 2100000, guid: c48fb59857a5098488a658cb86725784, type: 2}
   - prefab: {fileID: 6543334999112736865, guid: 9b36be3ebcd79234a818600a4c06c636, type: 3}
     nameToscan: Giraffe_0_0
     speed: 0.8
     timeToStart: 2.7
+    distance: 0.2
     materialOverride:
     - {fileID: 2100000, guid: c9574d644b25f154c9798d2a2a6efbc8, type: 2}
   - prefab: {fileID: 6851945885587050130, guid: ac74e6385ab91dd468ab0f8ef88e4fc3, type: 3}
     nameToscan: Elephant_0_0
     speed: 0.6
     timeToStart: 2.7
+    distance: 0.3
     materialOverride:
     - {fileID: 2100000, guid: 3010322256645614e9cdbf1ceb2b06f0, type: 2}
   spawnedObjects: []

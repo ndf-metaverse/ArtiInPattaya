@@ -43,7 +43,7 @@ public class Spawn : MonoBehaviour
 
             if (!autoSpawnPaused && spawnedObjects.Count < limitautospawn)
             {
-                SpawnObject(playerSpawnedRecently);
+                SpawnObject(false);
             }
 
             yield return new WaitForSeconds(spawnInterval); // ให้พักก่อนลูปใหม่

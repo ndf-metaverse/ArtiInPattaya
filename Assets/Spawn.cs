@@ -166,5 +166,6 @@ public class ObjectToSpawnList
     public float speed;
     public float timeToStart;
     public float distance;
+    public Vector3[] laneSetScale;
     public Material[] materialOverride;
 }

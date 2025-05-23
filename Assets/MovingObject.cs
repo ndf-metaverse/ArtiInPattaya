@@ -17,10 +17,11 @@ public class MovingObject : MonoBehaviour
     public const int maxBounce = 3;
     private bool hasReturned = false;
     public GameObject[] refLaneGameobject;
+    public GameObject[] refScaleGameobject;
     public float idleTime = 2f;
     public float idleCount = 0f;
     public Animator animator;
-    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime)
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime, GameObject[] refScaleLane)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
@@ -28,7 +29,7 @@ public class MovingObject : MonoBehaviour
         this.refLaneGameobject = refLaneGameobject;
         this.idleTime = idelTime;
         animator = GetComponent<Animator>();
-
+        this.refScaleGameobject = refScaleLane;
     }
 
     void Update()
@@ -71,7 +72,7 @@ public class MovingObject : MonoBehaviour
                 pos.y = newY;
                 float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;
                 pos.z = newZ;
-                transform.localScale = new Vector3(refLaneGameobject[randomLaneIndex].transform.localScale.x, refLaneGameobject[randomLaneIndex].transform.localScale.y, transform.localScale.z);
+                transform.localScale = new Vector3(refScaleGameobject[bounceCount].transform.localScale.x, refScaleGameobject[bounceCount].transform.localScale.y, transform.localScale.z);
 
             }
 

@@ -121,7 +121,7 @@ public class Spawn : MonoBehaviour
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));
-        obj.transform.localScale = new Vector3(refLaneGameobject[0].transform.localScale.x, refLaneGameobject[0].transform.localScale.y, 0.1f);
+        obj.transform.localScale = new Vector3(objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.x, objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.y, 0.1f);
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
         if (playerSpawn)
         {
@@ -143,7 +143,7 @@ public class Spawn : MonoBehaviour
             obj.transform.localScale = scale;
         }
 
-        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart);
+        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart, objectScanPrefab[selectIndex].laneSetScale);
 
         spawnedObjects.Add(obj);
 
@@ -166,6 +166,6 @@ public class ObjectToSpawnList
     public float speed;
     public float timeToStart;
     public float distance;
-    public Vector3[] laneSetScale;
+    public GameObject[] laneSetScale;
     public Material[] materialOverride;
 }

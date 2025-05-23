@@ -1343,14 +1343,14 @@ MonoBehaviour:
   spawnParticle: {fileID: 120726557}
   refLaneGameobject:
   - {fileID: 2072725453}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1627311483}
+  - {fileID: 1587201708}
   objectScanPrefab:
   - prefab: {fileID: 9097420227158399092, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
     nameToscan: Turtle_0_0
     speed: 0.5
     timeToStart: 4
-    distance: -0.2
+    distance: 0.2
     laneSetScale:
     - {fileID: 1540135542}
     - {fileID: 1690717064}
@@ -1361,7 +1361,7 @@ MonoBehaviour:
     nameToscan: Peacock_0_0
     speed: 1
     timeToStart: 4
-    distance: -0.1
+    distance: 0.1
     laneSetScale:
     - {fileID: 315673258}
     - {fileID: 890422174}
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     nameToscan: Lion_0_0
     speed: 1.2
     timeToStart: 3.6
-    distance: 0.1
+    distance: -0.1
     laneSetScale:
     - {fileID: 1343639552}
     - {fileID: 435536042}
@@ -1394,7 +1394,7 @@ MonoBehaviour:
     nameToscan: Giraffe_0_0
     speed: 0.8
     timeToStart: 2.7
-    distance: 0.2
+    distance: -0.2
     laneSetScale:
     - {fileID: 2072725453}
     - {fileID: 1627311483}
@@ -1405,7 +1405,7 @@ MonoBehaviour:
     nameToscan: Elephant_0_0
     speed: 0.6
     timeToStart: 2.7
-    distance: 0.3
+    distance: -0.3
     laneSetScale:
     - {fileID: 1613277916}
     - {fileID: 1275038155}

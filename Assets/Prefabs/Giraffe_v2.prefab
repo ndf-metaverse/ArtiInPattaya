@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4076664064570413946
 Transform:
   m_ObjectHideFlags: 0
@@ -1278,7 +1278,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6234034120647395488, guid: b5fb9a71f0d0d0c449f0c8619f8858bb, type: 3}
+  - {fileID: 2100000, guid: c9574d644b25f154c9798d2a2a6efbc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1456,6 +1456,7 @@ MonoBehaviour:
   - {fileID: 9119496755659736679}
   - {fileID: 8785285648869100361}
   - {fileID: 6319622704027294577}
+  - {fileID: 5871821759675785836}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
   textureName: _BaseMap
 --- !u!65 &6661444050186389764

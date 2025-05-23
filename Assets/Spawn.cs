@@ -120,8 +120,8 @@ public class Spawn : MonoBehaviour
         //Spawn Animal
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
-        GameObject obj = Instantiate(selectedPrefab, spawnPosition, Quaternion.Euler(0, rotateY, 0));
-        obj.transform.localScale = new Vector3(refLaneGameobject[0].transform.localScale.x, refLaneGameobject[0].transform.localScale.y, selectedPrefab.transform.localScale.z);
+        GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));
+        obj.transform.localScale = new Vector3(refLaneGameobject[0].transform.localScale.x, refLaneGameobject[0].transform.localScale.y, 0.1f);
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
         if (playerSpawn)
         {
@@ -165,5 +165,6 @@ public class ObjectToSpawnList
     public string nameToscan;
     public float speed;
     public float timeToStart;
+    public float distance;
     public Material[] materialOverride;
 }

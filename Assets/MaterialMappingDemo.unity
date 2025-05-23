@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330355583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33a1297300344024e9b72110369768f4, type: 3}
   m_Name: 
@@ -1338,8 +1338,8 @@ MonoBehaviour:
   spawnParticle: {fileID: 120726557}
   refLaneGameobject:
   - {fileID: 2072725453}
-  - {fileID: 821973747}
-  - {fileID: 478013851}
+  - {fileID: 0}
+  - {fileID: 0}
   objectScanPrefab:
   - prefab: {fileID: 9097420227158399092, guid: ab8692c90d8378b4e9f03eab77804911, type: 3}
     nameToscan: Turtle_0_0
@@ -1694,11 +1694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440208072}
   m_CullTransparentMesh: 0
---- !u!1 &478013851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7850873024576245374, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
-  m_PrefabInstance: {fileID: 1294011737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577414935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,11 +2161,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748298436}
   m_CullTransparentMesh: 0
---- !u!1 &821973747 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6689961333181774531, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
-  m_PrefabInstance: {fileID: 1294011737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &865365884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2553,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5456864113899888128, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615005275687298047, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

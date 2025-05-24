@@ -54,7 +54,7 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnObject(true,0);
+            SpawnObject(false,0);
         }
     }
     public void SpawnObject(bool playerSpawn,int cam)

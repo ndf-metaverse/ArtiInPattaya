@@ -158,6 +158,7 @@ public class Spawn : MonoBehaviour
         jumpSound.Play();
         obj.transform.localScale = new Vector3(objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.x, objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.y, 0.1f);
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
+        float distance = objectScanPrefab[selectIndex].distance;
         if (playerSpawn)
         {
             obj.GetComponent<CloneMaterialTexture>().camUse = cam;
@@ -178,7 +179,7 @@ public class Spawn : MonoBehaviour
             obj.transform.localScale = scale;
         }
 
-        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart, objectScanPrefab[selectIndex].laneSetScale);
+        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart, objectScanPrefab[selectIndex].laneSetScale, distance);
 
         spawnedObjects.Add(obj);
 

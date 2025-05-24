@@ -20,7 +20,8 @@ public class MovingObject : MonoBehaviour
     public GameObject[] refScaleGameobject;
     public float idleTime = 2f;
     public float idleCount = 0f;
-    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime, GameObject[] refScaleLane)
+    public float distance;
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime, GameObject[] refScaleLane,float dis)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
@@ -28,6 +29,7 @@ public class MovingObject : MonoBehaviour
         this.refLaneGameobject = refLaneGameobject;
         this.idleTime = idelTime;
         this.refScaleGameobject = refScaleLane;
+        this.distance = dis;
     }
 
     void Update()
@@ -58,6 +60,7 @@ public class MovingObject : MonoBehaviour
             if (refLaneGameobject != null && refLaneGameobject.Length > 0)
             {
                 bounceCount++;
+                speed -= 0.1f;
                 if (bounceCount >= maxBounce)
                 {
                     OnDestroyed?.Invoke(this);
@@ -72,7 +75,7 @@ public class MovingObject : MonoBehaviour
                 float newY = refLaneGameobject[randomLaneIndex].transform.position.y;
                 pos.y = newY;
                 float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;
-                pos.z = newZ;
+                pos.z = newZ + distance;
                 transform.localScale = new Vector3(refScaleGameobject[bounceCount].transform.localScale.x, refScaleGameobject[bounceCount].transform.localScale.y, transform.localScale.z);
 
             }

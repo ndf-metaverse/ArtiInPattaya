@@ -1458,6 +1458,7 @@ MonoBehaviour:
   - {fileID: 6319622704027294577}
   - {fileID: 5871821759675785836}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  SecondMaterial: {fileID: 2100000, guid: ae5179898e88379458d202d4e15f5ac7, type: 2}
   textureName: _BaseMap
 --- !u!65 &6661444050186389764
 BoxCollider:

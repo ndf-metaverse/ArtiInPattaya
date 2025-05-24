@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: 7633462451802700127}
   - {fileID: 506606736264551303}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  SecondMaterial: {fileID: 2100000, guid: ae5179898e88379458d202d4e15f5ac7, type: 2}
   textureName: _BaseMap
 --- !u!54 &-5795872888203943741
 Rigidbody:

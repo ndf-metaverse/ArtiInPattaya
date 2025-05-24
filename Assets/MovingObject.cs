@@ -20,7 +20,6 @@ public class MovingObject : MonoBehaviour
     public GameObject[] refScaleGameobject;
     public float idleTime = 2f;
     public float idleCount = 0f;
-    public Animator animator;
     public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime, GameObject[] refScaleLane)
     {
         this.fromLeft = fromLeft;
@@ -28,7 +27,6 @@ public class MovingObject : MonoBehaviour
         this.cam = cam;
         this.refLaneGameobject = refLaneGameobject;
         this.idleTime = idelTime;
-        animator = GetComponent<Animator>();
         this.refScaleGameobject = refScaleLane;
     }
 
@@ -42,7 +40,6 @@ public class MovingObject : MonoBehaviour
         else
         {
             float moveAmount = speed * Time.deltaTime;
-            animator.SetBool("Walk", true);
 
             transform.Translate(Vector3.right * moveAmount);
         }

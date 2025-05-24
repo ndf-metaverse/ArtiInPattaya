@@ -66,7 +66,7 @@ public class QRDecodeTest2 : MonoBehaviour
     {
         if(e_qrController.time > 0.04f)
         {
-            Spawn.instance.SpawnObject(true);
+            //Spawn.instance.SpawnObject(true);
             e_qrController.time = 0;
         }
 

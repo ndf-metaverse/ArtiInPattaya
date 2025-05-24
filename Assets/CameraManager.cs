@@ -57,7 +57,7 @@ public class CameraManager : MonoBehaviour
         if (previewImage != null && avProLiveCamera.Device != null)
         {
             previewImage.texture = avProLiveCamera.Device.OutputTexture;
-            Spawn.instance.SpawnObject(true);
+            //Spawn.instance.SpawnObject(true);
 
             qrDecodeTest.ScanCooldown();
 

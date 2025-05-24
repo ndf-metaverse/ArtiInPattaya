@@ -1339,6 +1339,7 @@ MonoBehaviour:
   - {fileID: 366231766560112103}
   - {fileID: 6765820390138979947}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  SecondMaterial: {fileID: 2100000, guid: ae5179898e88379458d202d4e15f5ac7, type: 2}
   textureName: _BaseMap
 --- !u!1 &5608737382453485951
 GameObject:

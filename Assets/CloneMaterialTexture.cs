@@ -6,15 +6,25 @@ public class CloneMaterialTexture : MonoBehaviour
 {
     public Renderer[] mainRenderers;
     public Material originalMaterial;
+    public Material SecondMaterial;
     public string textureName = "_BaseMap";
-
+    public int camUse;
     private void Start()
     {
         if (mainRenderers == null || originalMaterial == null)
             return;
 
         // เตรียม texture ที่จะใช้ซ้ำ
+
         Texture texture = originalMaterial.GetTexture(textureName);
+        if(camUse == 1)
+        {
+            texture = originalMaterial.GetTexture(textureName);
+        }
+        else if(camUse == 2)
+        {
+            texture = SecondMaterial.GetTexture(textureName);
+        }
         Texture2D originalTex = null;
 
         if (texture is RenderTexture renderTex)

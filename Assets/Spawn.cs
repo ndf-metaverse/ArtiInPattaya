@@ -43,7 +43,7 @@ public class Spawn : MonoBehaviour
 
             if (!autoSpawnPaused && spawnedObjects.Count < limitautospawn)
             {
-                SpawnObject(false);
+                SpawnObject(false,0);
             }
 
             yield return new WaitForSeconds(spawnInterval); // ให้พักก่อนลูปใหม่
@@ -53,10 +53,10 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnObject(true);
+            SpawnObject(true,0);
         }
     }
-    public void SpawnObject(bool playerSpawn)
+    public void SpawnObject(bool playerSpawn,int cam)
     {
         if (playerSpawn)
         {
@@ -65,7 +65,7 @@ public class Spawn : MonoBehaviour
             StartCoroutine(ResumeAutoSpawnAfterDelay(10f)); // ← หยุด auto แล้วเริ่มนับเวลา
         }
 
-        StartCoroutine(SpawnObjectRoutine(playerSpawn));
+        StartCoroutine(SpawnObjectRoutine(playerSpawn,cam));
     }
     private IEnumerator ResumeAutoSpawnAfterDelay(float delay)
     {
@@ -74,7 +74,7 @@ public class Spawn : MonoBehaviour
         playerSpawnedRecently = false;
     }
 
-    private IEnumerator SpawnObjectRoutine(bool playerSpawn)
+    private IEnumerator SpawnObjectRoutine(bool playerSpawn,int cam)
     {
         bool spawnLeft = UnityEngine.Random.value < 0.5f;
 
@@ -108,7 +108,7 @@ public class Spawn : MonoBehaviour
         int selectIndex = UnityEngine.Random.Range(0, objectToSpawn.Length);
 
         //For scanning
-        string scanned = QRDecodeTest2.instance.textScan;
+        string scanned = DualWebcamController.instance.textScan;
         foreach (var animal in objectScanPrefab)
         {
             if (animal.nameToscan == scanned)
@@ -125,7 +125,7 @@ public class Spawn : MonoBehaviour
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
         if (playerSpawn)
         {
-
+            obj.GetComponent<CloneMaterialTexture>().camUse = cam;
         }
         else
         {

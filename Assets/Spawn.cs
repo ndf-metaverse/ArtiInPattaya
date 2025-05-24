@@ -23,6 +23,7 @@ public class Spawn : MonoBehaviour
     public List<GameObject> spawnedObjects = new List<GameObject>();
 
     public AudioSource portalSound;
+    public AudioSource jumpSound;
     public bool notUseMaterial = false;
     public bool playerSpawnedRecently = false;
 
@@ -121,6 +122,7 @@ public class Spawn : MonoBehaviour
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));
+        jumpSound.Play();
         obj.transform.localScale = new Vector3(objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.x, objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.y, 0.1f);
         float timeToStart = objectScanPrefab[selectIndex].timeToStart;
         if (playerSpawn)

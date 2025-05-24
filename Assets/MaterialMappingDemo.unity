@@ -1268,7 +1268,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 079ade8ec468af443801ca5be716a8ca, type: 2}
   - prefab: {fileID: 3946844854748099520, guid: d834c9ad2a2a0c14fb0ccbd5eb2804f5, type: 3}
     nameToscan: Peacock_0_0
-    speed: 1
+    speed: 0.8
     timeToStart: 4
     distance: 0.5
     laneSetScale:

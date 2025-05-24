@@ -1259,7 +1259,7 @@ MonoBehaviour:
     nameToscan: Turtle_0_0
     speed: 0.5
     timeToStart: 4
-    distance: 1
+    distance: -1
     laneSetScale:
     - {fileID: 1540135542}
     - {fileID: 1690717064}
@@ -1270,7 +1270,7 @@ MonoBehaviour:
     nameToscan: Peacock_0_0
     speed: 0.8
     timeToStart: 4
-    distance: 0.5
+    distance: -0.5
     laneSetScale:
     - {fileID: 315673258}
     - {fileID: 890422174}
@@ -1292,7 +1292,7 @@ MonoBehaviour:
     nameToscan: Lion_0_0
     speed: 1.2
     timeToStart: 3.6
-    distance: -0.3
+    distance: 0.3
     laneSetScale:
     - {fileID: 1343639552}
     - {fileID: 435536042}
@@ -1303,7 +1303,7 @@ MonoBehaviour:
     nameToscan: Giraffe_0_0
     speed: 0.8
     timeToStart: 2.7
-    distance: -0.5
+    distance: 0.8
     laneSetScale:
     - {fileID: 2072725453}
     - {fileID: 1627311483}
@@ -1314,7 +1314,7 @@ MonoBehaviour:
     nameToscan: Elephant_0_0
     speed: 0.6
     timeToStart: 2.9
-    distance: -0.8
+    distance: 1.2
     laneSetScale:
     - {fileID: 1613277916}
     - {fileID: 1275038155}
@@ -2400,6 +2400,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 105151856761579851, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 401882784348989915, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.03
+      objectReference: {fileID: 0}
     - target: {fileID: 654230642671958229, guid: 6ff2b1e41d73a78459b082d03f78e81f, type: 3}
       propertyPath: m_IsActive
       value: 1

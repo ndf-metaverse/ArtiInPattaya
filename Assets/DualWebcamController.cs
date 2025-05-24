@@ -91,13 +91,13 @@ public class DualWebcamController : MonoBehaviour
                                 {
                                     textScan = result.Text;
 
-                                    spawnSystem.SpawnObject(true,1);
+                                    spawnSystem.SpawnObject(true,1,0);
                                 }
                                 else if (camName == "Camera2")
                                 {
                                     textScan2 = result.Text;
 
-                                    spawnSystem.SpawnObject(true, 2);
+                                    spawnSystem.SpawnObject(true, 2, 0);
                                 }
                                 StartCoroutine(ResetScanFlag(camName, 10f));
                             }

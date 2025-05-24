@@ -44,7 +44,7 @@ public class Spawn : MonoBehaviour
 
             if (!autoSpawnPaused && spawnedObjects.Count < limitautospawn)
             {
-                SpawnObject(false,0);
+                SpawnObject(false,0, 0);
             }
 
             yield return new WaitForSeconds(spawnInterval); // ให้พักก่อนลูปใหม่
@@ -54,10 +54,35 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnObject(false,0);
+            SpawnObject(false,0,0);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SpawnObject(false, 0, 1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SpawnObject(false, 0, 2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SpawnObject(false, 0, 3);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SpawnObject(false, 0, 4);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SpawnObject(false, 0, 5);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SpawnObject(false, 0, 6);
+        }
+
     }
-    public void SpawnObject(bool playerSpawn,int cam)
+    public void SpawnObject(bool playerSpawn,int cam,int key)
     {
         if (playerSpawn)
         {
@@ -66,7 +91,7 @@ public class Spawn : MonoBehaviour
             StartCoroutine(ResumeAutoSpawnAfterDelay(10f)); // ← หยุด auto แล้วเริ่มนับเวลา
         }
 
-        StartCoroutine(SpawnObjectRoutine(playerSpawn,cam));
+        StartCoroutine(SpawnObjectRoutine(playerSpawn,cam,key));
     }
     private IEnumerator ResumeAutoSpawnAfterDelay(float delay)
     {
@@ -75,7 +100,7 @@ public class Spawn : MonoBehaviour
         playerSpawnedRecently = false;
     }
 
-    private IEnumerator SpawnObjectRoutine(bool playerSpawn,int cam)
+    private IEnumerator SpawnObjectRoutine(bool playerSpawn,int cam,int key)
     {
         bool spawnLeft = UnityEngine.Random.value < 0.5f;
 
@@ -123,6 +148,10 @@ public class Spawn : MonoBehaviour
             }
         }
         //Spawn Animal
+        if(key > 0)
+        {
+            selectIndex = key - 1;
+        }
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawn[selectIndex];
         GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));

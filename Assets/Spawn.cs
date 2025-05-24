@@ -112,7 +112,7 @@ public class Spawn : MonoBehaviour
         string scanned = DualWebcamController.instance.textScan;
         foreach (var animal in objectScanPrefab)
         {
-            if (animal.nameToscan == scanned)
+            if (animal.nameToscan == scanned && playerSpawn)
             {
                 selectIndex = Array.IndexOf(objectScanPrefab.ToArray(), animal);
                 break;

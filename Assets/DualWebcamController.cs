@@ -107,7 +107,7 @@ public class DualWebcamController : MonoBehaviour
                     // ignore error
                 }
             }
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(8);
         }
     }
 

@@ -20,6 +20,7 @@ public class DualWebcamController : MonoBehaviour
     private bool canScanCam2 = true;
 
     public string textScan;
+    public string textScan2;
 
     public static DualWebcamController instance;
 
@@ -81,7 +82,6 @@ public class DualWebcamController : MonoBehaviour
                     if (result != null)
                     {
                         Debug.Log($"[{camName}] QR Code: {result.Text}");
-                        textScan = result.Text;
 
                         if (spawnSystem != null)
                         {
@@ -89,11 +89,13 @@ public class DualWebcamController : MonoBehaviour
                             {
                                 if (camName == "Camera1")
                                 {
+                                    textScan = result.Text;
 
                                     spawnSystem.SpawnObject(true,1);
                                 }
                                 else if (camName == "Camera2")
                                 {
+                                    textScan2 = result.Text;
 
                                     spawnSystem.SpawnObject(true, 2);
                                 }

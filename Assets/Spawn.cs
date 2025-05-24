@@ -110,6 +110,10 @@ public class Spawn : MonoBehaviour
 
         //For scanning
         string scanned = DualWebcamController.instance.textScan;
+        if(cam == 2)
+        {
+            scanned = DualWebcamController.instance.textScan2;
+        }
         foreach (var animal in objectScanPrefab)
         {
             if (animal.nameToscan == scanned && playerSpawn)

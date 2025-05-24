@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: peacock_mat
-    second: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+    second: {fileID: 2100000, guid: 030fb6a3aa9d07048853a4f8a966410f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

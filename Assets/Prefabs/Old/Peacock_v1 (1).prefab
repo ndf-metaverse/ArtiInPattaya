@@ -585,7 +585,9 @@ MonoBehaviour:
   - {fileID: 8009195448998826257}
   - {fileID: 1116295090536540879}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  SecondMaterial: {fileID: 0}
   textureName: _BaseMap
+  camUse: 0
 --- !u!1 &3697126825545990348
 GameObject:
   m_ObjectHideFlags: 0

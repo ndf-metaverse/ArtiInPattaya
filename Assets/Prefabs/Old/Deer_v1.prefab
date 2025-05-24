@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158204624141305093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_ear_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882935543940137964}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8206999489774859747}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_hoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696147864808763315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2626126031514150483}
   - component: {fileID: 4606517328168252645}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_ear_b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8665363840289670076}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_ear_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8292520117175323892}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587333686937086592}
   - component: {fileID: 1872134993018927509}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_back_behide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7550018468959073234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552085158320588062}
   - component: {fileID: 8080257557445162506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_ear_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4823638908206316962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2713321681484889543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_hoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757205344432147970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5724871357513020426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 5656961267889094743}
   - component: {fileID: 5507944584620931914}
   - component: {fileID: 1316163210635731010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,9 @@ MonoBehaviour:
   - {fileID: 4855678193560187375}
   - {fileID: 2116369566684613925}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
+  SecondMaterial: {fileID: 0}
   textureName: _BaseMap
+  camUse: 0
 --- !u!65 &5507944584620931914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -733,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9057601828434133861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_hoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8708701087354252650}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1604901253370904459}
   - component: {fileID: 3661500808255281463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_antler_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5932133018034199008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3782619597840733023}
   - component: {fileID: 5840111731442494314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_back_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963047850540016381}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_ear_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8830975662741121678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472578497595133900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218431222195618371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,7 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6849820761605740261}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_ear_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3901606723308101598}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2802428682201547875}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5428731435384139745}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: neck_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8290485041293011082}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_front_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449687578505047789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_ankle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927290958475104049}
   - component: {fileID: 6835943746563984920}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_eyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1406,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349788142828041017}
   - component: {fileID: 2116369566684613925}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6830804160590898717}
   - component: {fileID: 4955625181607679659}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_front_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,7 +1586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5563426277889381954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1617,7 +1619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4528324908323950103}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4978513735611658810}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7838944050487489887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4300243693228220764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_back_hoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5091356354417798694}
   - component: {fileID: 4820837829582012284}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_antler_b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1831,7 +1833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7801974326414861114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: left_back_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,7 +1865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3687712376167701334}
   - component: {fileID: 7408780585768138902}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1971,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2224385690528439942}
   - component: {fileID: 4855678193560187375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Deer_front_leg_behide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3671614965011007717}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right_front_knee
   m_TagString: Untagged
   m_Icon: {fileID: 0}

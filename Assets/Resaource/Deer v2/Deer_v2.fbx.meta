@@ -3,7 +3,12 @@ guid: 6358960f7e86d9d43a5c13c65e843c7d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: deer_mat
+    second: {fileID: 2100000, guid: 6ed3d215338fc31468ae515b79e8a33b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

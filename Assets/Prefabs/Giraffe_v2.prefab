@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4076664064570413946
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,7 +1427,7 @@ Animator:
   m_GameObject: {fileID: 6543334999112736865}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 00d05247ca1a427438ce1b0b4865d359, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34118d01085ade641b175575dc477305, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1453,13 +1453,14 @@ MonoBehaviour:
   - {fileID: 7637482675223528211}
   - {fileID: 8280604883017568645}
   - {fileID: 1680136517674009411}
+  - {fileID: 5871821759675785836}
   - {fileID: 9119496755659736679}
   - {fileID: 8785285648869100361}
   - {fileID: 6319622704027294577}
-  - {fileID: 5871821759675785836}
   originalMaterial: {fileID: 2100000, guid: 5fc1a71e55ce15e4d97e8e5778771e99, type: 2}
   SecondMaterial: {fileID: 2100000, guid: ae5179898e88379458d202d4e15f5ac7, type: 2}
   textureName: _BaseMap
+  camUse: 0
 --- !u!65 &6661444050186389764
 BoxCollider:
   m_ObjectHideFlags: 0

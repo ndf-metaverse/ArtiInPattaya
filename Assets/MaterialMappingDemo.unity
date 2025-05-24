@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: -4.73, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1266,6 +1266,7 @@ MonoBehaviour:
     - {fileID: 843573184}
     materialOverride:
     - {fileID: 2100000, guid: 079ade8ec468af443801ca5be716a8ca, type: 2}
+    - {fileID: 2100000, guid: 8221f972c813c334390c369950e3c388, type: 2}
   - prefab: {fileID: 3946844854748099520, guid: d834c9ad2a2a0c14fb0ccbd5eb2804f5, type: 3}
     nameToscan: Peacock_0_0
     speed: 0.8
@@ -1277,6 +1278,7 @@ MonoBehaviour:
     - {fileID: 371692861}
     materialOverride:
     - {fileID: 2100000, guid: 030fb6a3aa9d07048853a4f8a966410f, type: 2}
+    - {fileID: 2100000, guid: c9e7384dd8be7044bbfeb0a39c6359f0, type: 2}
   - prefab: {fileID: 4717320256259325754, guid: 86e07cc350e12d74cb794dfebfca5e63, type: 3}
     nameToscan: Dear_0_0
     speed: 1.1
@@ -1299,6 +1301,7 @@ MonoBehaviour:
     - {fileID: 2047654348}
     materialOverride:
     - {fileID: 2100000, guid: c48fb59857a5098488a658cb86725784, type: 2}
+    - {fileID: 2100000, guid: f73e97d17744dfd41a62cabbed21a463, type: 2}
   - prefab: {fileID: 6543334999112736865, guid: 9b36be3ebcd79234a818600a4c06c636, type: 3}
     nameToscan: Giraffe_0_0
     speed: 0.8
@@ -1310,6 +1313,7 @@ MonoBehaviour:
     - {fileID: 1587201708}
     materialOverride:
     - {fileID: 2100000, guid: c9574d644b25f154c9798d2a2a6efbc8, type: 2}
+    - {fileID: 2100000, guid: da511eb99fd48404abba70db0412e374, type: 2}
   - prefab: {fileID: 6851945885587050130, guid: ac74e6385ab91dd468ab0f8ef88e4fc3, type: 3}
     nameToscan: Elephant_0_0
     speed: 0.6
@@ -1321,6 +1325,7 @@ MonoBehaviour:
     - {fileID: 1300623024}
     materialOverride:
     - {fileID: 2100000, guid: 3010322256645614e9cdbf1ceb2b06f0, type: 2}
+    - {fileID: 2100000, guid: fbfc7b166bab338488447bbfa2b6e81a, type: 2}
   spawnedObjects: []
   portalSound: {fileID: 111422826}
   jumpSound: {fileID: 747555657}

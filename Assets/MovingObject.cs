@@ -65,6 +65,10 @@ public class MovingObject : MonoBehaviour
                 }
 
                 int randomLaneIndex = bounceCount;
+                if(refLaneGameobject[randomLaneIndex] == null)
+                {
+                    Destroy(gameObject);
+                }
                 float newY = refLaneGameobject[randomLaneIndex].transform.position.y;
                 pos.y = newY;
                 float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;

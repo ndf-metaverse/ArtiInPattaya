@@ -23,7 +23,7 @@ public class DualWebcamController : MonoBehaviour
     public string textScan2;
 
     public static DualWebcamController instance;
-
+    public bool firstScan;
     void Start()
     {
         instance = this;
@@ -109,7 +109,7 @@ public class DualWebcamController : MonoBehaviour
                     // ignore error
                 }
             }
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(5);
         }
     }
 

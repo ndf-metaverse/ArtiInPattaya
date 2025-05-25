@@ -21,7 +21,7 @@ public class MovingObject : MonoBehaviour
     public float idleTime = 2f;
     public float idleCount = 0f;
     public float distance;
-    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject,float idelTime, GameObject[] refScaleLane,float dis)
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject, float idelTime, GameObject[] refScaleLane, float dis)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
@@ -45,7 +45,7 @@ public class MovingObject : MonoBehaviour
 
             transform.Translate(Vector3.right * moveAmount);
         }
-        
+
 
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
 
@@ -65,13 +65,11 @@ public class MovingObject : MonoBehaviour
                 {
                     OnDestroyed?.Invoke(this);
                     Destroy(gameObject);
+                    return;
                 }
 
                 int randomLaneIndex = bounceCount;
-                if(refLaneGameobject[randomLaneIndex] == null)
-                {
-                    Destroy(gameObject);
-                }
+
                 float newY = refLaneGameobject[randomLaneIndex].transform.position.y;
                 pos.y = newY;
                 float newZ = refLaneGameobject[randomLaneIndex].transform.position.z;
@@ -87,17 +85,17 @@ public class MovingObject : MonoBehaviour
             scale.z = -scale.z;
             transform.localScale = scale;
 
-            
-                if (bounceCount > 2)
-                {
-                    transform.Rotate(0f, 0, 0f);
 
-                }
-                else
-                {
-                    transform.Rotate(0f, 180f, 0f);
-                }
-            
+            if (bounceCount > 2)
+            {
+                transform.Rotate(0f, 0, 0f);
+
+            }
+            else
+            {
+                transform.Rotate(0f, 180f, 0f);
+            }
+
         }
 
         if (hasReturned && screenPos.x >= 0 && screenPos.x <= Screen.width)

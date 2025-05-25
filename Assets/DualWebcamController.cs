@@ -1,3 +1,4 @@
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,8 +27,9 @@ public class DualWebcamController : MonoBehaviour
     public static DualWebcamController instance;
     public bool firstScan;
 
-    private Dictionary<string, float> qrCooldownTracker = new Dictionary<string, float>();
-    public float cooldownTime = 10f;
+    private HashSet<string> activeQRCodes = new HashSet<string>();
+    private Dictionary<string, float> qrLastSeenTime = new Dictionary<string, float>();
+    public float qrDisappearThreshold = 3f;
 
     void Start()
     {
@@ -36,13 +38,13 @@ public class DualWebcamController : MonoBehaviour
         spawnSystem = FindObjectOfType<Spawn>();
         if (spawnSystem == null)
         {
-            Debug.LogError("��辺 Spawn System � Scene!");
+            Debug.LogError("ไม่พบ Spawn System ใน Scene!");
         }
 
         var devices = WebCamTexture.devices;
         if (devices.Length < 2)
         {
-            Debug.LogError("��ͧ�ա��ͧ 2 ��Ǣ���");
+            Debug.LogError("ต้องมีกล้อง 2 ตัวขึ้นไป");
             return;
         }
 
@@ -67,6 +69,9 @@ public class DualWebcamController : MonoBehaviour
 
         StartCoroutine(ScanLoop(cam1, "Camera1"));
         StartCoroutine(ScanLoop(cam2, "Camera2"));
+
+        StartCoroutine(CheckQRDisappearLoop());
+
     }
 
     System.Collections.IEnumerator ScanLoop(WebCamTexture cam, string camName)
@@ -81,34 +86,26 @@ public class DualWebcamController : MonoBehaviour
                     var result = barcodeReader.Decode(data, cam.width, cam.height);
                     if (result != null)
                     {
-                        Debug.Log($"[{camName}] QR Code: {result.Text}");
+                        string qrText = result.Text;
+                        qrLastSeenTime[qrText] = Time.time;
 
-                        if (spawnSystem != null)
+                        if (!activeQRCodes.Contains(qrText))
                         {
-                            bool isCoolDownOver = !qrCooldownTracker.ContainsKey(result.Text) ||
-                                                  Time.time - qrCooldownTracker[result.Text] >= cooldownTime;
+                            // ยังไม่ถูก mark ว่ากำลังถูกเห็น → spawn ได้
+                            activeQRCodes.Add(qrText);
 
-                            if (isCoolDownOver && ((camName == "Camera1" && canScanCam1) || (camName == "Camera2" && canScanCam2)))
+                            if (camName == "Camera1")
                             {
-                                qrCooldownTracker[result.Text] = Time.time; // �ѹ�֡����
-
-                                if (camName == "Camera1")
-                                {
-                                    textScan = result.Text;
-                                    spawnSystem.SpawnObject(true, 1, 0);
-                                }
-                                else if (camName == "Camera2")
-                                {
-                                    textScan2 = result.Text;
-                                    spawnSystem.SpawnObject(true, 2, 0);
-                                }
-
-                                StartCoroutine(ResetScanFlag(camName, 0.5f));
+                                textScan = qrText;
+                                spawnSystem.SpawnObject(true, 1, 0);
                             }
-                            else
+                            else if (camName == "Camera2")
                             {
-                                Debug.Log($"QR '{result.Text}' Cooldown");
+                                textScan2 = qrText;
+                                spawnSystem.SpawnObject(true, 2, 0);
                             }
+
+                            StartCoroutine(ResetScanFlag(camName, 0.5f));
                         }
                     }
 
@@ -121,7 +118,30 @@ public class DualWebcamController : MonoBehaviour
             yield return new WaitForSeconds(2);
         }
     }
+    private IEnumerator CheckQRDisappearLoop()
+    {
+        while (true)
+        {
+            List<string> toRemove = new List<string>();
 
+            foreach (var qr in activeQRCodes)
+            {
+                if (qrLastSeenTime.ContainsKey(qr) && Time.time - qrLastSeenTime[qr] > qrDisappearThreshold)
+                {
+                    toRemove.Add(qr);
+                }
+            }
+
+            foreach (var qr in toRemove)
+            {
+                activeQRCodes.Remove(qr);
+                qrLastSeenTime.Remove(qr);
+                Debug.Log($"QR '{qr}' Holding");
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+    }
     System.Collections.IEnumerator ResetScanFlag(string camName, float delay)
     {
         yield return new WaitForSeconds(delay);

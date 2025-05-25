@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using ZXing;
@@ -24,6 +25,10 @@ public class DualWebcamController : MonoBehaviour
 
     public static DualWebcamController instance;
     public bool firstScan;
+
+    private Dictionary<string, float> qrCooldownTracker = new Dictionary<string, float>();
+    public float cooldownTime = 10f;
+
     void Start()
     {
         instance = this;
@@ -41,25 +46,20 @@ public class DualWebcamController : MonoBehaviour
             return;
         }
 
-        // สร้าง WebCamTexture และเริ่มเล่น
         cam1 = new WebCamTexture(devices[0].name);
         cam2 = new WebCamTexture(devices[1].name);
 
         cam1.Play();
         cam2.Play();
 
-        // เซ็ต RawImage preview
         if (previewCam1 != null) previewCam1.texture = cam1;
         if (previewCam2 != null) previewCam2.texture = cam2;
 
-        // เซ็ต MaterialApply สำหรับกล้องแต่ละตัว ให้ใช้กล้องที่เปิด
         if (cam1MaterialApply != null)
-            cam1MaterialApply.WebcamCameraController = null; // ถ้าไม่ได้ใช้ DeviceCameraController
-                                                             // หรือกำหนด reference กล้องที่เหมาะสมถ้ามี (ตามระบบคุณ)
+            cam1MaterialApply.WebcamCameraController = null; 
         if (cam2MaterialApply != null)
             cam2MaterialApply.WebcamCameraController = null;
 
-        // ในที่นี้เราเซ็ต Material texture ตรงๆ
         if (cam1MaterialApply != null && cam1MaterialApply.Material != null)
             cam1MaterialApply.Material.mainTexture = cam1;
         if (cam2MaterialApply != null && cam2MaterialApply.Material != null)
@@ -85,31 +85,40 @@ public class DualWebcamController : MonoBehaviour
 
                         if (spawnSystem != null)
                         {
-                            if ((camName == "Camera1" && canScanCam1) || (camName == "Camera2" && canScanCam2))
+                            bool isCoolDownOver = !qrCooldownTracker.ContainsKey(result.Text) ||
+                                                  Time.time - qrCooldownTracker[result.Text] >= cooldownTime;
+
+                            if (isCoolDownOver && ((camName == "Camera1" && canScanCam1) || (camName == "Camera2" && canScanCam2)))
                             {
+                                qrCooldownTracker[result.Text] = Time.time; // บันทึกเวลา
+
                                 if (camName == "Camera1")
                                 {
                                     textScan = result.Text;
-
-                                    spawnSystem.SpawnObject(true,1,0);
+                                    spawnSystem.SpawnObject(true, 1, 0);
                                 }
                                 else if (camName == "Camera2")
                                 {
                                     textScan2 = result.Text;
-
                                     spawnSystem.SpawnObject(true, 2, 0);
                                 }
-                                StartCoroutine(ResetScanFlag(camName, 10f));
+
+                                StartCoroutine(ResetScanFlag(camName, 0.5f));
+                            }
+                            else
+                            {
+                                Debug.Log($"QR '{result.Text}' Cooldown");
                             }
                         }
                     }
+
                 }
                 catch
                 {
                     // ignore error
                 }
             }
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
         }
     }
 

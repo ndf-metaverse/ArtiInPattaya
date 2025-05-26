@@ -73,24 +73,39 @@ public class WebCameraMaterialApply : MonoBehaviour
         }
     }
 
-    void ApplyMapping(Texture texture)
+   void ApplyMapping(Texture texture)
+{
+    if (_lastTexture != texture)
     {
-        if (_lastTexture != texture)
+        if (_material != null)
         {
-            if (_material != null)
+            if (_propTexture != -1)
             {
-                if (_propTexture != -1)
+                if (!_material.HasProperty(_propTexture))
                 {
-                    if (!_material.HasProperty(_propTexture))
-                    {
-                        Debug.LogError(string.Format("[AVProLiveCamera] Material {0} doesn't have texture property {1}", _material.name, _texturePropertyName), this);
-                    }
-                    _material.SetTexture(_propTexture, texture);
-                    _lastTexture = texture;
+                    Debug.LogError(string.Format("[AVProLiveCamera] Material {0} doesn't have texture property {1}", _material.name, _texturePropertyName), this);
                 }
+                _material.SetTexture(_propTexture, texture);
+                
+                // ตั้ง emission map เป็น texture เดียวกับ base map
+                if (_material.HasProperty("_EmissionMap"))
+                {
+                    _material.SetTexture("_EmissionMap", texture);
+                }
+                // ตั้งสี emission เป็นขาวเต็ม
+                if (_material.HasProperty("_EmissionColor"))
+                {
+                    _material.SetColor("_EmissionColor", Color.white);
+                }
+                // เปิด emission keyword
+                _material.EnableKeyword("_EMISSION");
+
+                _lastTexture = texture;
             }
         }
     }
+}
+
 
     void OnDisable()
     {

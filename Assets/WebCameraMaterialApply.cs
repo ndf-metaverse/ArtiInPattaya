@@ -11,8 +11,7 @@ public class WebCameraMaterialApply : MonoBehaviour
     public bool useSquareTexture;
 
     private int _propTexture = -1;
-    private Texture _lastTexture;
-
+    public Texture _lastTexture;
     public DeviceCameraController WebcamCameraController
     {
         get { return easyWebcamController; }
@@ -87,17 +86,14 @@ public class WebCameraMaterialApply : MonoBehaviour
                 }
                 _material.SetTexture(_propTexture, texture);
                 
-                // ตั้ง emission map เป็น texture เดียวกับ base map
                 if (_material.HasProperty("_EmissionMap"))
                 {
                     _material.SetTexture("_EmissionMap", texture);
                 }
-                // ตั้งสี emission เป็นขาวเต็ม
                 if (_material.HasProperty("_EmissionColor"))
                 {
                     _material.SetColor("_EmissionColor", Color.white);
                 }
-                // เปิด emission keyword
                 _material.EnableKeyword("_EMISSION");
 
                 _lastTexture = texture;

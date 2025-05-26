@@ -54,7 +54,7 @@ public class Spawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnObject(false,0,0);
+            SpawnObject(true,0,0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

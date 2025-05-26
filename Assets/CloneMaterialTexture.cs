@@ -9,22 +9,23 @@ public class CloneMaterialTexture : MonoBehaviour
     public Material SecondMaterial;
     public string textureName = "_BaseMap";
     public int camUse;
+
     private void Start()
     {
         if (mainRenderers == null || originalMaterial == null)
             return;
 
         // เตรียม texture ที่จะใช้ซ้ำ
-
         Texture texture = originalMaterial.GetTexture(textureName);
-        if(camUse == 1)
+        if (camUse == 1)
         {
             texture = originalMaterial.GetTexture(textureName);
         }
-        else if(camUse == 2)
+        else if (camUse == 2)
         {
             texture = SecondMaterial.GetTexture(textureName);
         }
+
         Texture2D originalTex = null;
 
         if (texture is RenderTexture renderTex)
@@ -56,7 +57,7 @@ public class CloneMaterialTexture : MonoBehaviour
             Graphics.CopyTexture(originalTex, clonedTex);
         }
 
-        // Loop ทุก renderer แล้ว assign material ใหม่พร้อม texture
+        // Loop ทุก renderer แล้ว assign material ใหม่พร้อม texture และตั้ง EmissionMap ให้เหมือน BaseMap
         foreach (Renderer rend in mainRenderers)
         {
             if (rend == null) continue;
@@ -66,7 +67,15 @@ public class CloneMaterialTexture : MonoBehaviour
             {
                 mats[i] = new Material(originalMaterial);
                 if (clonedTex != null)
+                {
                     mats[i].mainTexture = clonedTex;
+
+                    // ตั้ง Emission Map ใช้ texture เดียวกับ Base Map
+                    mats[i].SetTexture("_EmissionMap", clonedTex);
+
+                    // เปิดใช้งาน emission keyword ใน shader
+                    mats[i].EnableKeyword("_EMISSION");
+                }
             }
             rend.materials = mats;
         }

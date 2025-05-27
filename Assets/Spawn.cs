@@ -18,6 +18,7 @@ public class Spawn : MonoBehaviour
     public GameObject spawnParticle;
 
     public GameObject[] refLaneGameobject;
+    public GameObject[] positionSpawn;
 
     public List<ObjectToSpawnList> objectScanPrefab;
     public List<GameObject> spawnedObjects = new List<GameObject>();
@@ -108,6 +109,30 @@ public class Spawn : MonoBehaviour
         Vector3 lanePosition = refLaneGameobject[0].transform.position;
         int leftZSpawn = spawnLeft ? 0 : 1;
         Vector3 spawnPosition = new Vector3(spawnLeft ? -5f : 5f, 0, lanePosition.z + leftZSpawn);
+        int r = UnityEngine.Random.RandomRange(0, 2);
+        Debug.Log(r);
+        if (spawnLeft)
+        {
+            if (r == 0)
+            {
+                spawnPosition = new Vector3(positionSpawn[0].transform.position.x, 0, lanePosition.z + leftZSpawn);
+            }
+            else
+            {
+                spawnPosition = new Vector3(positionSpawn[1].transform.position.x, 0, lanePosition.z + leftZSpawn);
+            }
+        }
+        else
+        {
+            if (r == 0)
+            {
+                spawnPosition = new Vector3(positionSpawn[2].transform.position.x, 0, lanePosition.z + leftZSpawn);
+            }
+            else
+            {
+                spawnPosition = new Vector3(positionSpawn[3].transform.position.x, 0, lanePosition.z + leftZSpawn);
+            }
+        }
 
         if (spawnedObjects.Count >= limitspawn)
         {

@@ -131,7 +131,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
+    - _EmissionColor: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
     - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _SpecColor: {r: 0.7112943, g: 0.751809, b: 0.76865673, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

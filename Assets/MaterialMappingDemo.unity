@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 196010776}
   - component: {fileID: 196010775}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: Webcam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1277,7 +1277,14 @@ MonoBehaviour:
   spawnInterval: 5
   limitspawn: 30
   limitautospawn: 10
-  objectToSpawn:
+  objectToSpawnLeft:
+  - {fileID: 388830736807069278, guid: 92ef4d3f3cf4de0419cc8fec7bd7d263, type: 3}
+  - {fileID: 349928893422751051, guid: d938eee5c154fa14c8e4a681a0f784e1, type: 3}
+  - {fileID: 6456717490101614642, guid: 790c2dedf1c431b4882cb9cc0b42ffab, type: 3}
+  - {fileID: 8742671080765351908, guid: 66871f22c1b5ff9428716d400a731a61, type: 3}
+  - {fileID: 4649309838675279645, guid: 922e894532ff7aa4cb628df7a4769eb4, type: 3}
+  - {fileID: 575955019276064168, guid: 6d73548f38399e24fb0b996d7a3080d8, type: 3}
+  objectToSpawnRight:
   - {fileID: 388830736807069278, guid: 92ef4d3f3cf4de0419cc8fec7bd7d263, type: 3}
   - {fileID: 349928893422751051, guid: d938eee5c154fa14c8e4a681a0f784e1, type: 3}
   - {fileID: 6456717490101614642, guid: 790c2dedf1c431b4882cb9cc0b42ffab, type: 3}
@@ -3288,7 +3295,7 @@ GameObject:
   - component: {fileID: 1766124198}
   - component: {fileID: 1766124199}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: Webcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

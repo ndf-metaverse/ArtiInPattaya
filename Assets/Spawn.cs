@@ -11,7 +11,8 @@ public class Spawn : MonoBehaviour
     public int limitautospawn = 10;
 
     //spawn system
-    public GameObject[] objectToSpawn;
+    public GameObject[] objectToSpawnLeft;
+    public GameObject[] objectToSpawnRight;
     public float objectSpeed = 5f;
     public Camera mainCamera;
     public static Spawn instance;
@@ -156,7 +157,7 @@ public class Spawn : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         int rotateY = spawnLeft ? 0 : 180;
-        int selectIndex = UnityEngine.Random.Range(0, objectToSpawn.Length);
+        int selectIndex = UnityEngine.Random.Range(0, objectToSpawnLeft.Length);
 
         //For scanning
         string scanned = DualWebcamController.instance.textScan;
@@ -178,7 +179,11 @@ public class Spawn : MonoBehaviour
             selectIndex = key - 1;
         }
         objectSpeed = objectScanPrefab[selectIndex].speed;
-        GameObject selectedPrefab = objectToSpawn[selectIndex];
+        GameObject selectedPrefab = objectToSpawnLeft[selectIndex];
+        if(cam == 2)
+        {
+            selectedPrefab = objectToSpawnRight[selectIndex];
+        }
         GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));
         jumpSound.Play();
         obj.transform.localScale = new Vector3(objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.x, objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.y, 0.1f);

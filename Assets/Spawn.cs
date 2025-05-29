@@ -209,7 +209,7 @@ public class Spawn : MonoBehaviour
             obj.transform.localScale = scale;
         }
 
-        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart, objectScanPrefab[selectIndex].laneSetScale, distance);
+        obj.AddComponent<MovingObject>().Initialize(spawnLeft, objectSpeed, mainCamera, refLaneGameobject, timeToStart, objectScanPrefab[selectIndex].laneSetScale, distance,playerSpawn);
 
         spawnedObjects.Add(obj);
 

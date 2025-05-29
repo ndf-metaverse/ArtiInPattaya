@@ -15,13 +15,18 @@ public class MovingObject : MonoBehaviour
     private float screenBuffer = 100f;
     public int bounceCount = 0;
     public const int maxBounce = 3;
-    private bool hasReturned = false;
+
+    private int walkLoopCount = 0;
+    private bool walkingAfterBounce = false;
+    private int currentWalkTarget = 2; private bool hasReturned = false;
+
     public GameObject[] refLaneGameobject;
     public GameObject[] refScaleGameobject;
     public float idleTime = 2f;
     public float idleCount = 0f;
     public float distance;
-    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject, float idelTime, GameObject[] refScaleLane, float dis)
+    public bool playerSpawn = false;
+    public void Initialize(bool fromLeft, float speed, Camera cam, GameObject[] refLaneGameobject, float idelTime, GameObject[] refScaleLane, float dis,bool player)
     {
         this.fromLeft = fromLeft;
         this.speed = speed;
@@ -30,10 +35,12 @@ public class MovingObject : MonoBehaviour
         this.idleTime = idelTime;
         this.refScaleGameobject = refScaleLane;
         this.distance = dis;
+        playerSpawn = player;
     }
 
     void Update()
     {
+
         if (idleCount < idleTime)
         {
             idleCount += Time.deltaTime;

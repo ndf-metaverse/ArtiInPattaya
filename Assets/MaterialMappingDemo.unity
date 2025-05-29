@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 5
-  limitspawn: 30
+  limitspawn: 60
   limitautospawn: 10
   objectToSpawnLeft:
   - {fileID: 3667014190020023402, guid: befbe1af29baa2f41bbe774d7721b5fa, type: 3}

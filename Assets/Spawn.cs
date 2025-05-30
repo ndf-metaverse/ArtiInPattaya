@@ -175,7 +175,10 @@ public class Spawn : MonoBehaviour
 
         int rotateY = spawnLeft ? 0 : 180;
         int selectIndex = UnityEngine.Random.Range(0, objectToSpawnLeft.Length);
-
+        if(selectIndex == 5)
+        {
+            selectIndex = UnityEngine.Random.Range(0, objectToSpawnLeft.Length);
+        }
         //For scanning
         string scanned = DualWebcamController.instance.textScan;
         if(cam == 2)
@@ -197,8 +200,7 @@ public class Spawn : MonoBehaviour
         }
         else
         {
-            float[] spawnWeights = new float[] { 1f, 1f, 1f, 1f, 1f, 0.3f };
-            selectIndex = GetWeightedRandomIndex(spawnWeights);
+            
         }
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawnLeft[selectIndex];
@@ -206,6 +208,7 @@ public class Spawn : MonoBehaviour
         {
             selectedPrefab = objectToSpawnRight[selectIndex];
         }
+       
         GameObject obj = Instantiate(selectedPrefab,new Vector3( spawnPosition.x,spawnPosition.y,spawnPosition.z + objectScanPrefab[selectIndex].distance), Quaternion.Euler(0, rotateY, 0));
         jumpSound.Play();
         obj.transform.localScale = new Vector3(objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.x, objectScanPrefab[selectIndex].laneSetScale[0].transform.localScale.y, 0.1f);

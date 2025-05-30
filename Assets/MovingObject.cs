@@ -10,6 +10,7 @@ public class MovingObject : MonoBehaviour
 
     public bool fromLeft;
     public float speed;
+    public float speedDefault;
     private Camera cam;
 
     private float screenBuffer = 100f;
@@ -34,6 +35,7 @@ public class MovingObject : MonoBehaviour
         this.idleTime = idelTime;
         this.refScaleGameobject = refScaleLane;
         this.distance = dis;
+        this.speedDefault = speed;
         playerSpawn = player;
     }
 
@@ -70,6 +72,7 @@ public class MovingObject : MonoBehaviour
                 if (bounceCount >= maxBounce)
                 { if (playerSpawn)
                     {
+                        speed = speedDefault;
                         round += 1;
                         bounceCount = 1;
                         if (round >= roundLimit)
@@ -123,6 +126,7 @@ public class MovingObject : MonoBehaviour
         {
             hasReturned = false;
         }
+        Destroy(gameObject,600);
 
     }
 }

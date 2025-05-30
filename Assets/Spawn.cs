@@ -101,6 +101,23 @@ public class Spawn : MonoBehaviour
         autoSpawnPaused = false;
         playerSpawnedRecently = false;
     }
+    private int GetWeightedRandomIndex(float[] weights)
+    {
+        float totalWeight = 0f;
+        foreach (var w in weights)
+            totalWeight += w;
+
+        float randomValue = UnityEngine.Random.Range(0, totalWeight);
+        float cumulative = 0f;
+
+        for (int i = 0; i < weights.Length; i++)
+        {
+            cumulative += weights[i];
+            if (randomValue < cumulative)
+                return i;
+        }
+        return weights.Length - 1;
+    }
 
     private IEnumerator SpawnObjectRoutine(bool playerSpawn,int cam,int key)
     {
@@ -177,6 +194,11 @@ public class Spawn : MonoBehaviour
         if(key > 0)
         {
             selectIndex = key - 1;
+        }
+        else
+        {
+            float[] spawnWeights = new float[] { 1f, 1f, 1f, 1f, 1f, 0.3f };
+            selectIndex = GetWeightedRandomIndex(spawnWeights);
         }
         objectSpeed = objectScanPrefab[selectIndex].speed;
         GameObject selectedPrefab = objectToSpawnLeft[selectIndex];

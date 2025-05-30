@@ -73,6 +73,7 @@ public class MovingObject : MonoBehaviour
                 { if (playerSpawn)
                     {
                         speed = speedDefault;
+                        speed -= 0.1f;
                         round += 1;
                         bounceCount = 1;
                         if (round >= roundLimit)

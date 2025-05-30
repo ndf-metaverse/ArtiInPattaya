@@ -126,7 +126,7 @@ public class MovingObject : MonoBehaviour
         {
             hasReturned = false;
         }
-        Destroy(gameObject,600);
+        Destroy(gameObject,1200);
 
     }
 }

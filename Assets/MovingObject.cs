@@ -15,7 +15,7 @@ public class MovingObject : MonoBehaviour
 
     private float screenBuffer = 100f;
     public int bounceCount = 0;
-    public const int maxBounce = 3;
+    public const int maxBounce = 2;
     private bool hasReturned = false;
 
     public int round = 0;
@@ -69,29 +69,34 @@ public class MovingObject : MonoBehaviour
             {
                 bounceCount++;
                 speed -= 0.1f;
-                if (bounceCount >= maxBounce)
-                { if (playerSpawn)
-                    {
-                        speed = speedDefault;
-                        speed -= 0.1f;
-                        round += 1;
-                        bounceCount = 1;
-                        if (round >= roundLimit)
-                        {
-                            OnDestroyed?.Invoke(this);
-                            Destroy(gameObject);
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        OnDestroyed?.Invoke(this);
-                        Destroy(gameObject);
-                        return;
-                    }
-                   
-                    
+                if (bounceCount >= maxBounce) 
+                {
+                    OnDestroyed?.Invoke(this);
+                    Destroy(gameObject);
+                    return;
                 }
+                //{ if (playerSpawn)
+                //    {
+                //        speed = speedDefault;
+                //        speed -= 0.1f;
+                //        round += 1;
+                //        bounceCount = 1;
+                //        if (round >= roundLimit)
+                //        {
+                //            OnDestroyed?.Invoke(this);
+                //            Destroy(gameObject);
+                //            return;
+                //        }
+                //    }
+                //    else
+                //    {
+                //        OnDestroyed?.Invoke(this);
+                //        Destroy(gameObject);
+                //        return;
+                //    }
+
+
+                //}
 
                 int randomLaneIndex = bounceCount;
 

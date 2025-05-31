@@ -19,7 +19,7 @@ public class MovingObject : MonoBehaviour
     private bool hasReturned = false;
 
     public int round = 0;
-    public int roundLimit = 10;
+    public int roundLimit = 5;
     public GameObject[] refLaneGameobject;
     public GameObject[] refScaleGameobject;
     public float idleTime = 2f;

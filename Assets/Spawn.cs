@@ -32,6 +32,7 @@ public class Spawn : MonoBehaviour
     public float delayspawnAuto = 0;
 
     private bool autoSpawnPaused = false;
+    private int sequentialLeftIndex = 0;
     public void Start()
     {
         instance = this;
@@ -174,11 +175,10 @@ public class Spawn : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         int rotateY = spawnLeft ? 0 : 180;
-        int selectIndex = UnityEngine.Random.Range(0, objectToSpawnLeft.Length);
-        if(selectIndex == 5)
-        {
-            selectIndex = UnityEngine.Random.Range(0, objectToSpawnLeft.Length);
-        }
+        int selectIndex;
+        
+            selectIndex = sequentialLeftIndex;
+            sequentialLeftIndex = (sequentialLeftIndex + 1) % objectToSpawnLeft.Length;
         //For scanning
         string scanned = DualWebcamController.instance.textScan;
         if(cam == 2)

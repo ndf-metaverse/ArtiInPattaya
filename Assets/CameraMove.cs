@@ -31,7 +31,11 @@ public class CameraMove : MonoBehaviour
         {
             horizontal = 1f;
         }
+        if(Input.GetKey(KeyCode.F))
+        {
+            Screen.SetResolution(6168, 1440, false);
 
+        }
         transform.position += new Vector3(horizontal, 0, 0) * moveSpeed * Time.deltaTime;
     }
 }
